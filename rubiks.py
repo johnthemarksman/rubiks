@@ -13,7 +13,8 @@ showSteps = True
 
 def printCube(cube):
     #int i,j
-    #//red test
+    #//red
+    
 
     for i in range(3):
         print( end ="      "),
