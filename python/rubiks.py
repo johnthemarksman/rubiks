@@ -1,6 +1,8 @@
 #this is a test
 #include <iostream>
+#tesitghgfhsdfasdffdshgsdfh
 import random
+import arcade
 """
 string printCube(string cube)
 string rightclock(string cube)
@@ -14,7 +16,7 @@ showSteps = True
 
 def printCube(cube):
     #int i,j
-    #//red test    
+    #//red test
 
     for i in range(3):
         print( end ="      "),
