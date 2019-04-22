@@ -1,5 +1,5 @@
 #include <iostream>
-#testing
+#tesitghgfhsdfasdffdshgsdfh
 import random
 """
 string printCube(string cube)
@@ -14,7 +14,7 @@ showSteps = True
 
 def printCube(cube):
     #int i,j
-    #//red test    
+    #//red test
 
     for i in range(3):
         print( end ="      "),
@@ -275,94 +275,96 @@ def populateCube():
 
 def main():
     """
-        #int i,j
-        print("This program is going to solve a rubik's cube")
-        /*print( "Enter the colors of the side with \na green center piece:\n"
-        string gSide
-        cin >> gSide
-        print(gSide,endl
-        print( "\nEnter the colors of the side with \na yellow center piece:\n"
-        string ySide
-        cin >> ySide
-        print(ySide,endl
-        print( "\nEnter the colors of the side with \na blue center piece:\n"
-        string bSide
-        cin >> bSide
-        print(bSide,endl
-        print( "\nEnter the colors of the side with \na white center piece:\n"
-        string wSide
-        cin >> wSide
-        print(wSide,endl
-        print( "\nEnter the colors of the side with \na red center piece:\n"
-        string rSide
-        cin >> rSide
-        print(rSide,endl
-        print( "\nEnter the colors of the side with \na orange center piece:\n"
-        string oSide
-        cin >> oSide
-        print(oSide,endl
+    #int i,j
+    print("This program is going to solve a rubik's cube")
+    /*print( "Enter the colors of the side with \na green center piece:\n"
+    string gSide
+    cin >> gSide
+    print(gSide,endl
+    print( "\nEnter the colors of the side with \na yellow center piece:\n"
+    string ySide
+    cin >> ySide
+    print(ySide,endl
+    print( "\nEnter the colors of the side with \na blue center piece:\n"
+    string bSide
+    cin >> bSide
+    print(bSide,endl
+    print( "\nEnter the colors of the side with \na white center piece:\n"
+    string wSide
+    cin >> wSide
+    print(wSide,endl
+    print( "\nEnter the colors of the side with \na red center piece:\n"
+    string rSide
+    cin >> rSide
+    print(rSide,endl
+    print( "\nEnter the colors of the side with \na orange center piece:\n"
+    string oSide
+    cin >> oSide
+    print(oSide,endl
 
-        string cube = rSide+wSide+gSide+ySide+oSide+bSide
-        print( cube,endl*/
+    string cube = rSide+wSide+gSide+ySide+oSide+bSide
+    print( cube,endl*/
 
-        string gSide = "ggggggggg"
-        string ySide = "yyyyyyyyy"
-        string bSide = "bbbbbbbbb"
-        string wSide = "wwwwwwwww"
-        string rSide = "rrrrrrrrr"
-        string oSide = "ooooooooo"
-        string cube = rSide+wSide+gSide+ySide+oSide+bSide
-        print( cube,endl
-        printCube(cube)
-        cube = leftclock(cube)
-        printCube(cube)
-        cube = topclock(cube)
-        printCube(cube)
-        cube = leftclock(cube)
-        print( "test"
-        printCube(cube)
-        cube = bottomclock(cube)
-        """
-
+    string gSide = "ggggggggg"
+    string ySide = "yyyyyyyyy"
+    string bSide = "bbbbbbbbb"
+    string wSide = "wwwwwwwww"
+    string rSide = "rrrrrrrrr"
+    string oSide = "ooooooooo"
+    string cube = rSide+wSide+gSide+ySide+oSide+bSide
+    print( cube,endl
+    printCube(cube)
+    cube = leftclock(cube)
+    printCube(cube)
+    cube = topclock(cube)
+    printCube(cube)
+    cube = leftclock(cube)
+    print( "test"
+    printCube(cube)
+    cube = bottomclock(cube)
+    """
+    
     cube = populateCube()
     cube = list(cube)
-
+    
     #for i in range(54):
     #    cube[i] = i
     solution = cube.copy()
     """
-        printCube(cube)
-        for i in range(10000000000):
+    printCube(cube)
+    for i in range(10000000000):
+        
+        x = random.randint(1,2)
+        if(x==0):
+            continue
+        if(x==1):
+            #print(x)
+            cube = rightclock(cube)
 
-            x = random.randint(1,2)
-            if(x==0):
-                continue
-            if(x==1):
-                #print(x)
-                cube = rightclock(cube)
+        if(x==2):
+            cube = awayclock(cube)
 
-            if(x==2):
-                cube = awayclock(cube)
+        if(x==3):
+            cube = leftclock(cube)
+        
+        if(x==4):
+            cube = frontclock(cube)
+        
+        if(x==5):
+            cube = bottomclock(cube)
 
-            if(x==3):
-                cube = leftclock(cube)
-
-            if(x==4):
-                cube = frontclock(cube)
-
-            if(x==5):
-                cube = bottomclock(cube)
-
-            if(x==6):
-                cube = topclock(cube)
-            if(i%100000 == 0):
-                print(i)
-            if (cube == solution):
-                print(i)
-                break
-        """
-
-    cube = lc(cube)    
+        if(x==6):
+            cube = topclock(cube)
+        if(i%100000 == 0):
+            print(i)
+        if (cube == solution):
+            print(i)
+            break
+    """
+        
+    cube = bc(cube)
+    cube = bc(cube)
+    cube = ac(cube)
     printCube(cube)
     cube = blueCross(cube)
     printCube(cube)
@@ -375,4 +377,4 @@ def main():
 
 
 main()
-#test
+#testing
