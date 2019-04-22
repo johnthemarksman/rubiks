@@ -1,6 +1,7 @@
 #include <iostream>
 #tesitghgfhsdfasdffdshgsdfh
 import random
+import arcade
 """
 string printCube(string cube)
 string rightclock(string cube)
