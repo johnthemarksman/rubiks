@@ -215,93 +215,207 @@ def acc(cube):
     return(cube)
 
 def blueCross(cube):
-    debug = False
+    debug = True
+    blues = 0
     print("entering blue cross phase")
     while(not(cube[46]=='g' and cube[50]=='g' and cube[52]=='g' and cube[48]=='g')):
         ### Green Side
         
-        if(cube[19] == 'g' and cube[52] != 'g'):
+        if(cube[19] == 'g'):
             if(debug == True):
-                print("true")
+                print("19")
+            while(cube[52] == 'g'):
+                cube = ac(cube)
+            
             cube = tc(cube)
             cube = tc(cube)
-        elif(cube[19] == 'g' and  cube[52] == 'g'):
-            if(debug == True):
-                print("52 == g")  
-            cube = ac(cube)
         
-        if(cube[23] == 'g' and cube[50] != 'g'):
+        if(cube[23] == 'g'):
             if(debug == True):
-                print("true")
+                print("23")
+            while(cube[50] == 'g'):
+                cube = ac(cube)
+            
             cube = rc(cube)
             cube = rc(cube)
-        elif(cube[23] == 'g' and cube[50] == 'g'): 
-            if(debug == True):
-                print("50 == g") 
-            cube = ac(cube)
 
-        if(cube[21] == 'g' and cube[48] != 'g'):
+        if(cube[21] == 'g'):
             if(debug == True):
-                print("true")
+                print("21")
+            while(cube[48] == 'g'):
+                cube = ac(cube)
+            
             cube = lc(cube)
             cube = lc(cube)
-        elif(cube[21] == 'g' and cube[48] == 'g'):  
+            
+        if(cube[25] == 'g'):
             if(debug == True):
-                print("48 == g")
-            cube = ac(cube)
-        if(cube[25] == 'g' and cube[46] != 'g'):
-            if(debug == True):
-                print("true")
+                print("25")
+            while(cube[46] == 'g'):
+                cube = ac(cube)
+            
             cube = bc(cube)
             cube = bc(cube)
-        elif(cube[25] == 'g' and cube[46] == 'g'):  
-            if(debug == True):
-                print("46 == g")
-            cube = ac(cube)
 
         ### Yellow Side
-        if(cube[30] == 'g' and cube[50] != 'g'):
+        if(cube[30] == 'g'):
+            
             if(debug == True):
-                print("true")
+                print("30")
+            while(cube[52] == 'g'):
+                cube = ac(cube)
+            
             cube = rc(cube)
             cube = ac(cube)
             cube = tcc(cube)
-        elif(cube[30] == 'g' and cube[50] == 'g'):
-            if(debug == True):
-                print("52 == g")  
-            cube = ac(cube)
         
-        if(cube[23] == 'g' and cube[50] != 'g'):
-            if(debug == True):
-                print("true")
-            cube = rc(cube)
-            cube = rc(cube)
-        elif(cube[50] == 'g'): 
-            if(debug == True):
-                print("50 == g") 
-            cube = ac(cube)
-
-        if(cube[21] == 'g' and cube[48] != 'g'):
-            if(debug == True):
-                print("true")
-            cube = lc(cube)
-            cube = lc(cube)
-        elif(cube[48] == 'g'):  
-            if(debug == True):
-                print("48 == g")
-            cube = ac(cube)
-        if(cube[25] == 'g' and cube[46] != 'g'):
-            if(debug == True):
-                print("true")
-            cube = bc(cube)
-            cube = bc(cube)
-        elif(cube[46] == 'g'):  
-            if(debug == True):
-                print("46 == g")
-            cube = ac(cube)
-        
+        if(cube[28] == 'g'):
             
+            if(debug == True):
+                print("28")
+            while(cube[52] == 'g'):
+                cube = ac(cube)
+            
+            cube = tcc(cube)
 
+        if(cube[32] == 'g'):
+            if(debug == True):
+                print("32")
+            while(cube[48] == 'g'):
+                cube = ac(cube)
+            
+            cube = rcc(cube)
+            cube = acc(cube)
+            cube = tcc(cube)
+
+        if(cube[34] == 'g'):
+            
+            if(debug == True):
+                print("34")
+            while(cube[46] == 'g'):
+                cube = ac(cube)
+            
+            cube = bc(cube)
+
+        ###  red side
+        if(cube[1] == 'g'):
+            if(debug == True):
+                print("1")
+            cube = tc(cube)
+            cube = acc(cube)
+            cube = rc(cube)
+        
+        if(cube[3] == 'g'):
+            
+            if(debug == True):
+                print("3")
+            while(cube[48] == 'g'):
+                cube = ac(cube)
+            
+            cube = lcc(cube)
+
+        if(cube[5] == 'g'):
+            if(debug == True):
+                print("5")
+            while(cube[50] == 'g'):
+                cube = ac(cube)
+            
+            cube = rc(cube)
+
+        if(cube[7] == 'g'):
+            if(debug == True):
+                print("7")
+            while(cube[52] == 'g'):
+                cube = ac(cube)
+            
+            cube = tc(cube)
+            cube = bc(cube)
+            cube = lcc(cube)
+
+        ###  white side
+        if(cube[10] == 'g'):
+            
+            if(debug == True):
+                print("10")
+            while(cube[52] == 'g'):
+                cube = ac(cube)
+            
+            cube = tc(cube)
+        
+        if(cube[12] == 'g'):
+            
+            if(debug == True):
+                print("12")
+            while(cube[48] == 'g'):
+                cube = ac(cube)
+            
+            cube = lcc(cube)
+            cube = acc(cube)
+            cube = tc(cube)
+
+        if(cube[14] == 'g'):
+            
+            if(debug == True):
+                print("14")
+            while(cube[48] == 'g'):
+                cube = ac(cube)
+            
+            cube = lcc(cube)
+            cube = acc(cube)
+            cube = tc(cube)
+
+        if(cube[16] == 'g'):
+            
+            if(debug == True):
+                print("16")
+            while(cube[46] == 'g'):
+                cube = ac(cube)
+            
+            cube = bcc(cube)
+
+        ###  orange side
+        if(cube[37] == 'g'):
+            
+            if(debug == True):
+                print("37")
+            while(cube[46] == 'g'):
+                cube = ac(cube)
+            
+            cube = bc(cube)
+            cube = ac(cube)
+            cube = rcc(cube)
+        
+        if(cube[39] == 'g'):
+            if(debug == True):
+                print("39")
+            while(cube[48] == 'g'):
+                cube = ac(cube)
+
+            cube = lc(cube)
+
+        if(cube[41] == 'g'):
+            if(debug == True):
+                print("41")
+            while(cube[50] == 'g'):
+                cube = ac(cube)
+            
+            cube = rcc(cube)
+
+        if(cube[43] == 'g'):
+            
+            if(debug == True):
+                print("43")
+            while(cube[46] == 'g'):
+                cube = ac(cube)
+            
+            cube = bc(cube)
+            cube = acc(cube)
+            cube = lc(cube)
+
+        print(blues)
+        blues += 1
+        # if blues == 100:
+        #     break
         #if(cube)
     print("leaving blue cross phase")
     return cube
@@ -375,41 +489,37 @@ def main():
     #for i in range(54):
     #    cube[i] = i
     solution = cube.copy()
-    """
     printCube(cube)
-    for i in range(10000000000):
+    for i in range(10):
         
-        x = random.randint(1,2)
+        x = random.randint(1,6)
         if(x==0):
             continue
         if(x==1):
             #print(x)
-            cube = rightclock(cube)
+            cube = rc(cube)
 
         if(x==2):
-            cube = awayclock(cube)
+            cube = ac(cube)
 
         if(x==3):
-            cube = leftclock(cube)
+            cube = lc(cube)
         
         if(x==4):
-            cube = frontclock(cube)
+            cube = fc(cube)
         
         if(x==5):
-            cube = bottomclock(cube)
+            cube = bc(cube)
 
         if(x==6):
-            cube = topclock(cube)
+            cube = tc(cube)
         if(i%100000 == 0):
             print(i)
         if (cube == solution):
             print(i)
             break
-    """
         
-    cube = tcc(cube)
-    cube = fc(cube)
-    cube = rcc(cube)
+
     printCube(cube)
     cube = blueCross(cube)
     printCube(cube)
