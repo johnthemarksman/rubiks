@@ -218,12 +218,55 @@ def blueCross(cube):
     debug = False
     print("entering blue cross phase")
     while(not(cube[46]=='g' and cube[50]=='g' and cube[52]=='g' and cube[48]=='g')):
+        ### Green Side
+        
         if(cube[19] == 'g' and cube[52] != 'g'):
             if(debug == True):
                 print("true")
             cube = tc(cube)
             cube = tc(cube)
-        elif(cube[52] == 'g'):
+        elif(cube[19] == 'g' and  cube[52] == 'g'):
+            if(debug == True):
+                print("52 == g")  
+            cube = ac(cube)
+        
+        if(cube[23] == 'g' and cube[50] != 'g'):
+            if(debug == True):
+                print("true")
+            cube = rc(cube)
+            cube = rc(cube)
+        elif(cube[23] == 'g' and cube[50] == 'g'): 
+            if(debug == True):
+                print("50 == g") 
+            cube = ac(cube)
+
+        if(cube[21] == 'g' and cube[48] != 'g'):
+            if(debug == True):
+                print("true")
+            cube = lc(cube)
+            cube = lc(cube)
+        elif(cube[21] == 'g' and cube[48] == 'g'):  
+            if(debug == True):
+                print("48 == g")
+            cube = ac(cube)
+        if(cube[25] == 'g' and cube[46] != 'g'):
+            if(debug == True):
+                print("true")
+            cube = bc(cube)
+            cube = bc(cube)
+        elif(cube[25] == 'g' and cube[46] == 'g'):  
+            if(debug == True):
+                print("46 == g")
+            cube = ac(cube)
+
+        ### Yellow Side
+        if(cube[30] == 'g' and cube[50] != 'g'):
+            if(debug == True):
+                print("true")
+            cube = rc(cube)
+            cube = ac(cube)
+            cube = tcc(cube)
+        elif(cube[30] == 'g' and cube[50] == 'g'):
             if(debug == True):
                 print("52 == g")  
             cube = ac(cube)
@@ -256,6 +299,7 @@ def blueCross(cube):
             if(debug == True):
                 print("46 == g")
             cube = ac(cube)
+        
             
 
         #if(cube)
@@ -363,9 +407,9 @@ def main():
             break
     """
         
-    cube = bc(cube)
-    cube = bc(cube)
-    cube = ac(cube)
+    cube = tcc(cube)
+    cube = fc(cube)
+    cube = rcc(cube)
     printCube(cube)
     cube = blueCross(cube)
     printCube(cube)
