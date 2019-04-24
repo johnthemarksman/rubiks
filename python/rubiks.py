@@ -215,7 +215,7 @@ def acc(cube):
     return(cube)
 
 def blueCross(cube):
-    debug = False
+    debug = True
     blues = 0
     print("entering blue cross phase")
     while(not(cube[46]=='g' and cube[50]=='g' and cube[52]=='g' and cube[48]=='g')):
@@ -412,52 +412,13 @@ def blueCross(cube):
             cube = acc(cube)
             cube = lc(cube)
 
-        #print(blues)
+        print(blues)
         blues += 1
         # if blues == 100:
         #     break
         #if(cube)
     print("leaving blue cross phase")
     return cube
-
-def greenCross(cube):
-    while not(cube[19] == 'g' and cube[21] == 'g' and cube[23] == 'g' and cube[25] == 'g'):
-        if((cube[43] == 'o' and cube[46] == 'g') or (cube[32] == 'y' and cube[50] == 'g') or (cube[1] == 'r' and cube[52] == 'g') or (cube[12] == 'w' and cube[48] == 'g')):
-            if (cube[43] == 'o' and cube[46] == 'g') :
-                cube = bc(cube)
-                cube = bc(cube)
-
-            if (cube[32] == 'y' and cube[50] == 'g'):
-                cube = rc(cube)
-                cube = rc(cube)
-
-            if (cube[1] == 'r' and cube[52] == 'g'):
-                cube = tc(cube)
-                cube = tc(cube)
-
-            if (cube[12] == 'w' and cube[48] == 'g'):
-                cube = lc(cube)
-                cube = lc(cube)
-        else:
-            cube = ac(cube)
-    return cube
-
-def greenCorners(cube):
-    while(not(   (cube[18] == 'g' and cube[6] == 'r' and cube[11] == 'w') and 
-                (cube[20] == 'g' and cube[27] == 'y' and cube[8] == 'r') and 
-                (cube[24] == 'g' and cube[17] == 'w' and cube[36] == 'o') and 
-                (cube[26] == 'g' and cube[38] == 'o' and cube[33] == 'y')) ):
-
-            ### green red white corner
-            grw = ('g', 'r', 'w')
-            
-            if((cube[18] == 'g' and cube[6] == 'r' and cube[11] == 'w') and 
-                (cube[20] == 'g' and cube[27] == 'y' and cube[8] == 'r') and 
-                (cube[24] == 'g' and cube[17] == 'w' and cube[36] == 'o') and 
-                (cube[26] == 'g' and cube[38] == 'o' and cube[33] == 'y')):
-
-            
-    return(cube)
 '''
 string awayclock(string cube)*/'''
 
@@ -552,8 +513,8 @@ def main():
 
         if(x==6):
             cube = tc(cube)
-        # if(i%100000 == 0):
-        #     print(i)
+        if(i%100000 == 0):
+            print(i)
         if (cube == solution):
             print(i)
             break
@@ -561,8 +522,6 @@ def main():
 
     printCube(cube)
     cube = blueCross(cube)
-    printCube(cube)
-    cube = greenCross(cube)
     printCube(cube)
     print (cube)
    
