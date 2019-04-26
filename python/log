@@ -11,56 +11,143 @@ w w w g g g y y y
       b b b       
       b b b       
 
-bc
+rc
 0
-ac
-tc
-lc
-tc
-tc
-lc
+wc
+wc
+rc
+gc
 bc
-lc
-ac
-      g o w       
-      g r b       
-      w r b       
-w w b o w w r r o 
-r w b o g g y y o 
-o b y o g b y w g 
-      g r r       
-      y o o       
-      y b y       
-      b w r       
-      y b g       
-      r y g       
+rc
+wc
+wc
+gc
+      y r g       
+      r r y       
+      w o o       
+o g g r w w b b w 
+o w y g g w r y o 
+b b w b b o y y r 
+      r r b       
+      w o o       
+      y w g       
+      r g y       
+      g b b       
+      g y o       
 
 entering blue cross phase
-23
-ac
-rc
-rc
-25
+21
+bc
+wc
+wc
+16
 bc
 bc
-3
-lc
-lc
-lc
-lcc
+oc
+oc
+oc
+occ
 0
 leaving blue cross phase
-      o o r       
-      o r o       
-      w r o       
-b b r b w b y w y 
-w w r b g w b y y 
-w o y g y r g b y 
-      r r w       
-      y o y       
-      g r g       
-      o g o       
+      b o w       
+      w r y       
+      o o o       
+y b y g w w b b g 
+w w r y g w r y y 
+o b o y y w b b y 
+      b o r       
+      r o o       
+      w r r       
+      g g g       
       g b g       
-      w g b       
+      r g r       
 
-['o', 'o', 'r', 'o', 'r', 'o', 'w', 'r', 'o', 'b', 'b', 'r', 'w', 'w', 'r', 'w', 'o', 'y', 'b', 'w', 'b', 'b', 'g', 'w', 'g', 'y', 'r', 'y', 'w', 'y', 'b', 'y', 'y', 'g', 'b', 'y', 'r', 'r', 'w', 'y', 'o', 'y', 'g', 'r', 'g', 'o', 'g', 'o', 'g', 'b', 'g', 'w', 'g', 'b']
+yc
+yc
+wc
+wc
+bc
+bc
+oc
+oc
+rc
+rc
+      r o w       
+      o r r       
+      o r o       
+y b y g g w b b o 
+r w w g g g y y r 
+g b o y g w b b y 
+      b o r       
+      y o w       
+      w o b       
+      r y r       
+      w b y       
+      g w g       
+
+bc
+bc
+bc
+wc
+wc
+wc
+wcc
+bc
+bc
+bc
+bcc
+wc
+bc
+wc
+wc
+wc
+wcc
+bc
+bc
+bc
+bcc
+wc
+bc
+wc
+wc
+wc
+wcc
+bc
+bc
+bc
+bcc
+wc
+bc
+wc
+wc
+wc
+wcc
+bc
+bc
+bc
+bcc
+wc
+bc
+wc
+wc
+wc
+wcc
+bc
+bc
+bc
+bcc
+wc
+bc
+      o r y       
+      y r r       
+      r r o       
+g o w g g w b b r 
+r w w g g g y y o 
+o b o y g w b b r 
+      b o r       
+      y o w       
+      w b y       
+      g o b       
+      y b w       
+      y w g       
+

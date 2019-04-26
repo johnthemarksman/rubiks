@@ -49,7 +49,7 @@ def printCube(cube):
     print(end ="\n")
 
 
-def rc(cube):
+def yc(cube):
     #//rotate right right side clockwise with green facing you and red on top
     tempCube = cube.copy()
     start = 27
@@ -64,19 +64,23 @@ def rc(cube):
         cube[i+6+start] = tempCube[start+8-i*3]
 
     if(showSteps == True):
-        print("rc")
+        print("yc")
 
     return(cube)
-def rcc(cube):
-    cube = rc(cube)
-    cube = rc(cube)
-    cube = rc(cube)
+def ycc(cube):
+    global showSteps
+    showSteps = False
+    cube = yc(cube)
+    cube = yc(cube)
+    cube = yc(cube)
+    showSteps = True
+
 
     if(showSteps == True):
-        print("rcc")
+        print("ycc")
 
     return(cube)
-def lc(cube):
+def wc(cube):
     #//rotate right right side clockwise with green facing you and red on top
     tempCube = cube.copy()
     start = 9
@@ -91,19 +95,22 @@ def lc(cube):
         cube[i+6+start] = tempCube[start+8-i*3]
 
     if(showSteps == True):
-        print("lc")
+        print("wc")
 
     return(cube)
-def lcc(cube):
-    cube = lc(cube)
-    cube = lc(cube)
-    cube = lc(cube)
+def wcc(cube):
+    global showSteps
+    showSteps = False
+    cube = wc(cube)
+    cube = wc(cube)
+    cube = wc(cube)
+    showSteps = True
 
     if(showSteps == True):
-        print("lcc")
+        print("wcc")
 
     return(cube)
-def tc(cube):
+def rc(cube):
     #//rotate right right side clockwise with green facing you and red on top
     tempCube = cube.copy()
     start = 0
@@ -118,19 +125,22 @@ def tc(cube):
         cube[i+6+start] = tempCube[start+8-i*3]
     
     if(showSteps == True):
-        print("tc")
+        print("rc")
 
     return(cube)
-def tcc(cube):
-    cube = tc(cube)
-    cube = tc(cube)
-    cube = tc(cube)
+def rcc(cube):
+    global showSteps
+    showSteps = False
+    cube = rc(cube)
+    cube = rc(cube)
+    cube = rc(cube)
+    showSteps = True
 
     if(showSteps == True):
-        print("tcc")
+        print("rcc")
 
     return(cube)
-def bc(cube):
+def oc(cube):
     #rotate bottom side clockwise with green facing you and red on top
     tempCube = cube.copy()
     start = 36
@@ -145,20 +155,23 @@ def bc(cube):
         cube[i+6+start] = tempCube[start+8-i*3]
     
     if(showSteps == True):
-        print("bc")
+        print("oc")
 
     return(cube)
-def bcc(cube):
-    cube = bc(cube)
-    cube = bc(cube)
-    cube = bc(cube)
+def occ(cube):
+    global showSteps
+    showSteps = False
+    cube = oc(cube)
+    cube = oc(cube)
+    cube = oc(cube)
+    showSteps = True
 
     if(showSteps == True):
-        print("bcc")
+        print("occ")
 
     return(cube)
     
-def fc(cube):
+def gc(cube):
     tempCube = cube.copy()
     start = 18
     for i in range(3): #(i=0i<3i++)
@@ -172,19 +185,22 @@ def fc(cube):
         cube[i+6+start] = tempCube[start+8-i*3]
 
     if(showSteps == True):
-        print("fc")
+        print("gc")
 
     return(cube)
-def fcc(cube):
-    cube = fc(cube)
-    cube = fc(cube)
-    cube = fc(cube)
+def gcc(cube):
+    global showSteps
+    showSteps = False
+    cube = gc(cube)
+    cube = gc(cube)
+    cube = gc(cube)
+    showSteps = True
 
     if(showSteps == True):
-        print("fcc")
+        print("gcc")
     
     return(cube)
-def ac(cube):
+def bc(cube):
     #//rotate right right side clockwise with green facing you and red on top
     tempCube = cube.copy()
     start = 53
@@ -201,16 +217,19 @@ def ac(cube):
         cube[start-i-6] = tempCube[start-8+i*3]
 
     if(showSteps == True):
-        print("ac")
+        print("bc")
 
     return(cube)
-def acc(cube):
-    cube = ac(cube)
-    cube = ac(cube)
-    cube = ac(cube)
+def bcc(cube):
+    global showSteps
+    showSteps = False
+    cube = bc(cube)
+    cube = bc(cube)
+    cube = bc(cube)
+    showSteps = True
 
     if(showSteps == True):
-        print("acc")
+        print("bcc")
 
     return(cube)
 
@@ -225,37 +244,37 @@ def blueCross(cube):
             if(debug == True):
                 print("19")
             while(cube[52] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = tc(cube)
-            cube = tc(cube)
+            cube = rc(cube)
+            cube = rc(cube)
         
         if(cube[23] == 'g'):
             if(debug == True):
                 print("23")
             while(cube[50] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = rc(cube)
-            cube = rc(cube)
+            cube = yc(cube)
+            cube = yc(cube)
 
         if(cube[21] == 'g'):
             if(debug == True):
                 print("21")
             while(cube[48] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = lc(cube)
-            cube = lc(cube)
+            cube = wc(cube)
+            cube = wc(cube)
             
         if(cube[25] == 'g'):
             if(debug == True):
                 print("25")
             while(cube[46] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = bc(cube)
-            cube = bc(cube)
+            cube = oc(cube)
+            cube = oc(cube)
 
         ### Yellow Side
         if(cube[30] == 'g'):
@@ -263,74 +282,74 @@ def blueCross(cube):
             if(debug == True):
                 print("30")
             while(cube[52] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = rc(cube)
-            cube = ac(cube)
-            cube = tcc(cube)
+            cube = yc(cube)
+            cube = bc(cube)
+            cube = rcc(cube)
         
         if(cube[28] == 'g'):
             
             if(debug == True):
                 print("28")
             while(cube[52] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = tcc(cube)
+            cube = rcc(cube)
 
         if(cube[32] == 'g'):
             if(debug == True):
                 print("32")
             while(cube[48] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
+            cube = ycc(cube)
+            cube = bcc(cube)
             cube = rcc(cube)
-            cube = acc(cube)
-            cube = tcc(cube)
 
         if(cube[34] == 'g'):
             
             if(debug == True):
                 print("34")
             while(cube[46] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = bc(cube)
+            cube = oc(cube)
 
         ###  red side
         if(cube[1] == 'g'):
             if(debug == True):
                 print("1")
-            cube = tc(cube)
-            cube = acc(cube)
             cube = rc(cube)
+            cube = bcc(cube)
+            cube = yc(cube)
         
         if(cube[3] == 'g'):
             
             if(debug == True):
                 print("3")
             while(cube[48] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = lcc(cube)
+            cube = wcc(cube)
 
         if(cube[5] == 'g'):
             if(debug == True):
                 print("5")
             while(cube[50] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = rc(cube)
+            cube = yc(cube)
 
         if(cube[7] == 'g'):
             if(debug == True):
                 print("7")
             while(cube[52] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = tc(cube)
-            cube = bc(cube)
-            cube = lcc(cube)
+            cube = rc(cube)
+            cube = oc(cube)
+            cube = wcc(cube)
 
         ###  white side
         if(cube[10] == 'g'):
@@ -338,40 +357,40 @@ def blueCross(cube):
             if(debug == True):
                 print("10")
             while(cube[52] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = tc(cube)
+            cube = rc(cube)
         
         if(cube[12] == 'g'):
             
             if(debug == True):
                 print("12")
             while(cube[48] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = lcc(cube)
-            cube = acc(cube)
-            cube = tc(cube)
+            cube = wcc(cube)
+            cube = bcc(cube)
+            cube = rc(cube)
 
         if(cube[14] == 'g'):
             
             if(debug == True):
                 print("14")
             while(cube[48] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = lcc(cube)
-            cube = acc(cube)
-            cube = tc(cube)
+            cube = wcc(cube)
+            cube = bcc(cube)
+            cube = rc(cube)
 
         if(cube[16] == 'g'):
             
             if(debug == True):
                 print("16")
             while(cube[46] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = bcc(cube)
+            cube = occ(cube)
 
         ###  orange side
         if(cube[37] == 'g'):
@@ -379,38 +398,38 @@ def blueCross(cube):
             if(debug == True):
                 print("37")
             while(cube[46] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
+            cube = oc(cube)
             cube = bc(cube)
-            cube = ac(cube)
-            cube = rcc(cube)
+            cube = ycc(cube)
         
         if(cube[39] == 'g'):
             if(debug == True):
                 print("39")
             while(cube[48] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
 
-            cube = lc(cube)
+            cube = wc(cube)
 
         if(cube[41] == 'g'):
             if(debug == True):
                 print("41")
             while(cube[50] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = rcc(cube)
+            cube = ycc(cube)
 
         if(cube[43] == 'g'):
             
             if(debug == True):
                 print("43")
             while(cube[46] == 'g'):
-                cube = ac(cube)
+                cube = bc(cube)
             
-            cube = bc(cube)
-            cube = acc(cube)
-            cube = lc(cube)
+            cube = oc(cube)
+            cube = bcc(cube)
+            cube = wc(cube)
 
         print(blues)
         blues += 1
@@ -419,6 +438,193 @@ def blueCross(cube):
         #if(cube)
     print("leaving blue cross phase")
     return cube
+
+def greenCross(cube):
+    while not(cube[19] == 'g' and cube[21] == 'g' and cube[23] == 'g' and cube[25] == 'g'):
+        if((cube[43] == 'o' and cube[46] == 'g') or (cube[32] == 'y' and cube[50] == 'g') or (cube[1] == 'r' and cube[52] == 'g') or (cube[12] == 'w' and cube[48] == 'g')):
+            if (cube[43] == 'o' and cube[46] == 'g') :
+                cube = oc(cube)
+                cube = oc(cube)
+
+            if (cube[32] == 'y' and cube[50] == 'g'):
+                cube = yc(cube)
+                cube = yc(cube)
+
+            if (cube[1] == 'r' and cube[52] == 'g'):
+                cube = rc(cube)
+                cube = rc(cube)
+
+            if (cube[12] == 'w' and cube[48] == 'g'):
+                cube = wc(cube)
+                cube = wc(cube)
+        else:
+            cube = bc(cube)
+    return cube
+
+def greenCorners(cube):
+    ### green red white corner
+    print("green red white corner")
+    grw = ('g', 'r', 'w')
+    correct = (18,6,11)
+    belowCorrect = (0,9,51)
+
+    if(cube[20] in grw and cube[27] in grw and cube[8] in grw):
+        cube = rcc(cube)
+        cube = bcc(cube)
+        cube = rc(cube)
+        cube = bc(cube)
+    elif(cube[24] in grw and cube[17] in grw and cube[36] in grw):
+        cube = occ(cube)
+        cube = bcc(cube)
+        cube = oc(cube)
+        cube = bc(cube)
+    elif(cube[26] in grw and cube[38] in grw and cube[33] in grw):
+        cube = ycc(cube)
+        cube = bcc(cube)
+        cube = yc(cube)
+        cube = bc(cube)
+    
+    while(not((cube[belowCorrect[0]] in grw) and (cube[belowCorrect[1]] in grw) and (cube[belowCorrect[2]] in grw)) and not(cube[correct[0]] in grw and cube[correct[1]] in grw and cube[correct[2]] in grw)):
+        cube = bc(cube)
+
+    if(cube[correct[0]] in grw and cube[correct[1]] in grw and cube[correct[2]] in grw) or (cube[0] in grw) and (cube[9] in grw) and (cube[51] in grw) and not(cube[correct[0]] == 'g' and cube[correct[1]] == 'r' and cube[correct[2]] == 'w'):
+        while(not(cube[correct[0]] == 'g' and cube[correct[1]] == 'r' and cube[correct[2]] == 'w')):
+            cube = wcc(cube)
+            cube = bcc(cube)
+            cube = wc(cube)
+            cube = bc(cube)
+
+
+
+
+
+
+    ### green yellow red corner
+    print("green yellow red corner")
+    grw = ('g', 'y', 'r')
+    correct = (20,27,8)
+    belowCorrect = (29,2,53)
+
+
+    if(cube[18] in grw and cube[6] in grw and cube[11] in grw):
+        cube = wcc(cube)
+        cube = bcc(cube)
+        cube = wc(cube)
+        cube = wc(cube)
+
+    # elif(cube[20] in grw and cube[27] in grw and cube[8] in grw):
+    #     cube = rcc(cube)
+    #     cube = bcc(cube)
+    #     cube = rc(cube)
+    #     cube = bc(cube)
+    elif(cube[24] in grw and cube[17] in grw and cube[36] in grw):
+        cube = occ(cube)
+        cube = bcc(cube)
+        cube = oc(cube)
+        cube = bc(cube)
+    elif(cube[26] in grw and cube[38] in grw and cube[33] in grw):
+        cube = ycc(cube)
+        cube = bcc(cube)
+        cube = yc(cube)
+        cube = bc(cube)
+    
+    while(not((cube[belowCorrect[0]] in grw) and (cube[belowCorrect[1]] in grw) and (cube[belowCorrect[2]] in grw)) and not(cube[correct[0]] in grw and cube[correct[1]] in grw and cube[correct[2]] in grw)):
+        cube = bc(cube)
+
+    if(cube[correct[0]] in grw and cube[correct[1]] in grw and cube[correct[2]] in grw) or (cube[belowCorrect[0]] in grw) and (cube[belowCorrect[1]] in grw) and (cube[belowCorrect[2]] in grw) and not(cube[correct[0]] == grw[0] and cube[correct[1]] == grw[1] and cube[correct[2]] == grw[2]):
+        while(not(cube[correct[0]] == grw[0] and cube[correct[1]] == grw[1] and cube[correct[2]] == grw[2])):
+            cube = rcc(cube)
+            cube = bcc(cube)
+            cube = rc(cube)
+            cube = bc(cube)
+
+    ### green white orange corner
+    print("green white orange corner")
+    grw = ('g', 'w', 'o')
+    correct = (24,17,36)
+    belowCorrect = (15,42,45)
+
+
+    if(cube[18] in grw and cube[6] in grw and cube[11] in grw):
+        cube = wcc(cube)
+        cube = bcc(cube)
+        cube = wc(cube)
+        cube = wc(cube)
+
+    elif(cube[20] in grw and cube[27] in grw and cube[8] in grw):
+        cube = rcc(cube)
+        cube = bcc(cube)
+        cube = rc(cube)
+        cube = bc(cube)
+    # elif(cube[24] in grw and cube[17] in grw and cube[36] in grw):
+    #     cube = occ(cube)
+    #     cube = bcc(cube)
+    #     cube = oc(cube)
+    #     cube = bc(cube)
+    elif(cube[26] in grw and cube[38] in grw and cube[33] in grw):
+        cube = ycc(cube)
+        cube = bcc(cube)
+        cube = yc(cube)
+        cube = bc(cube)
+    
+    while(not((cube[belowCorrect[0]] in grw) and (cube[belowCorrect[1]] in grw) and (cube[belowCorrect[2]] in grw)) and not(cube[correct[0]] in grw and cube[correct[1]] in grw and cube[correct[2]] in grw)):
+        cube = bc(cube)
+
+    if(cube[correct[0]] in grw and cube[correct[1]] in grw and cube[correct[2]] in grw) or (cube[belowCorrect[0]] in grw) and (cube[belowCorrect[1]] in grw) and (cube[belowCorrect[2]] in grw) and not(cube[correct[0]] == grw[0] and cube[correct[1]] == grw[1] and cube[correct[2]] == grw[2]):
+        while(not(cube[correct[0]] == grw[0] and cube[correct[1]] == grw[1] and cube[correct[2]] == grw[2])):
+            cube = occ(cube)
+            cube = bcc(cube)
+            cube = oc(cube)
+            cube = bc(cube)
+
+
+    ### green orange yellow corner
+    print("green orange yellow corner")
+    grw = ('g', 'o', 'y')
+    correct = (26,38,33)
+    belowCorrect = (44,35,47)
+
+
+    if(cube[18] in grw and cube[6] in grw and cube[11] in grw):
+        cube = wcc(cube)
+        cube = bcc(cube)
+        cube = wc(cube)
+        cube = wc(cube)
+
+    elif(cube[20] in grw and cube[27] in grw and cube[8] in grw):
+        cube = rcc(cube)
+        cube = bcc(cube)
+        cube = rc(cube)
+        cube = bc(cube)
+    elif(cube[24] in grw and cube[17] in grw and cube[36] in grw):
+        cube = occ(cube)
+        cube = bcc(cube)
+        cube = oc(cube)
+        cube = bc(cube)
+    # elif(cube[26] in grw and cube[38] in grw and cube[33] in grw):
+    #     cube = ycc(cube)
+    #     cube = bcc(cube)
+    #     cube = yc(cube)
+    #     cube = bc(cube)
+    
+    while(not((cube[belowCorrect[0]] in grw) and (cube[belowCorrect[1]] in grw) and (cube[belowCorrect[2]] in grw)) and not(cube[correct[0]] in grw and cube[correct[1]] in grw and cube[correct[2]] in grw)):
+        cube = bc(cube)
+
+    if(cube[correct[0]] in grw and cube[correct[1]] in grw and cube[correct[2]] in grw) or (cube[belowCorrect[0]] in grw) and (cube[belowCorrect[1]] in grw) and (cube[belowCorrect[2]] in grw) and not(cube[correct[0]] == grw[0] and cube[correct[1]] == grw[1] and cube[correct[2]] == grw[2]):
+        while(not(cube[correct[0]] == grw[0] and cube[correct[1]] == grw[1] and cube[correct[2]] == grw[2])):
+            cube = ycc(cube)
+            cube = bcc(cube)
+            cube = yc(cube)
+            cube = bc(cube)
+
+
+
+
+
+
+
+
+    return(cube)
 '''
 string awayclock(string cube)*/'''
 
@@ -497,22 +703,22 @@ def main():
             continue
         if(x==1):
             #print(x)
-            cube = rc(cube)
+            cube = yc(cube)
 
         if(x==2):
-            cube = ac(cube)
-
-        if(x==3):
-            cube = lc(cube)
-        
-        if(x==4):
-            cube = fc(cube)
-        
-        if(x==5):
             cube = bc(cube)
 
+        if(x==3):
+            cube = wc(cube)
+        
+        if(x==4):
+            cube = gc(cube)
+        
+        if(x==5):
+            cube = oc(cube)
+
         if(x==6):
-            cube = tc(cube)
+            cube = rc(cube)
         if(i%100000 == 0):
             print(i)
         if (cube == solution):
@@ -523,7 +729,10 @@ def main():
     printCube(cube)
     cube = blueCross(cube)
     printCube(cube)
-    print (cube)
+    cube = greenCross(cube)
+    printCube(cube)
+    cube = greenCorners(cube)
+    printCube(cube)
    
 
 
