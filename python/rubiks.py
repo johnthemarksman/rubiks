@@ -625,6 +625,35 @@ def greenCorners(cube):
 
 
     return(cube)
+
+
+def edges(cube):
+    allEdges = ( (10, 3) , (5, 28) , (34, 41) , (16, 39) , (1, 52) , (32, 50) , (43, 46) , (12, 48) )
+    allColors = ( (cube[10], cube[3]) , (cube[5], cube[28]) , (cube[34], cube[41]) , (cube[16], cube[39]) , (cube[1], cube[52]) , (cube[32], cube[50]) , (cube[43], cube[46]) , (cube[12], cube[48]) )
+    sideEdges = ( (10, 3) , (5, 28) , (34, 41) , (16, 39) )
+    topEdges = ( (1, 52) , (32, 50) , (43, 46) , (12, 48) )
+    
+    #white red edge
+    correct = allEdges[0]
+    colors = ('r', 'w')
+    location = -1
+    for i in range(8):
+        if(colors[0] in allColors[i] and colors[1] in allColors[i]):
+            print(i)
+            location = i
+            break
+    print(colors[0], allColors[location])
+    if colors[0] == allColors[location][0]:
+        while not(cube[52] in colors and cube[1] in colors):
+            cube = bc(cube)
+    else:
+        print('white red')
+
+        
+        
+    return cube
+    
+
 '''
 string awayclock(string cube)*/'''
 
@@ -732,10 +761,8 @@ def main():
     cube = greenCross(cube)
     printCube(cube)
     cube = greenCorners(cube)
+    cube = edges(cube)
     printCube(cube)
-   
-
-
 
     return 0
 
