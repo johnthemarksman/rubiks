@@ -1098,16 +1098,44 @@ def populateCube():
     oSide = "ooooooooo"
     bSide = "bbbbbbbbb"
 
-    rSide = input("Enter the red side with the blue side on top:")
-    wSide = input("Enter the white side with the red side on top:")
-    gSide = input("Enter the green side with the red side on top:")
-    ySide = input("Enter the yellow side with the red side on top:")
-    oSide = input("Enter the orange side with the green side on top:")
-    bSide = input("Enter the blue side with the orange side on top:")
+    # rSide = input("Enter the red side with the blue side on top:")
+    # wSide = input("Enter the white side with the red side on top:")
+    # gSide = input("Enter the green side with the red side on top:")
+    # ySide = input("Enter the yellow side with the red side on top:")
+    # oSide = input("Enter the orange side with the green side on top:")
+    # bSide = input("Enter the blue side with the orange side on top:")
 
     
     cube = str(rSide+wSide+gSide+ySide+oSide+bSide)
     return cube
+
+def scramble(cube):
+    for i in range(100):
+        x = random.randint(1,6)
+        if(x==0):
+            continue
+        if(x==1):
+            #print(x)
+            cube = yc(cube)
+
+        if(x==2):
+            cube = bc(cube)
+
+        if(x==3):
+            cube = wc(cube)
+        
+        if(x==4):
+            cube = gc(cube)
+        
+        if(x==5):
+            cube = oc(cube)
+
+        if(x==6):
+            cube = rc(cube)
+        if(i%100000 == 0):
+            print(i)
+    return cube
+
 
 def main():
     global steps
@@ -1120,34 +1148,9 @@ def main():
     #     cube[i] = i
     solution = cube.copy()
     printCube(cube)
-    # for i in range(100):
-        
-    #     x = random.randint(1,6)
-    #     if(x==0):
-    #         continue
-    #     if(x==1):
-    #         #print(x)
-    #         cube = yc(cube)
 
-    #     if(x==2):
-    #         cube = bc(cube)
+    cube = scramble(cube)
 
-    #     if(x==3):
-    #         cube = wc(cube)
-        
-    #     if(x==4):
-    #         cube = gc(cube)
-        
-    #     if(x==5):
-    #         cube = oc(cube)
-
-    #     if(x==6):
-    #         cube = rc(cube)
-    #     if(i%100000 == 0):
-    #         print(i)
-    #     if (cube == solution):
-    #         print(i)
-    #         break
     steps = 0
 
     printCube(cube)
