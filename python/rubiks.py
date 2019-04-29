@@ -12,6 +12,7 @@ string bottomclock(string cube)
 string awayclock(string cube)*/"""
 
 showSteps = True
+steps = 0
 
 def printCube(cube):
     #int i,j
@@ -50,6 +51,7 @@ def printCube(cube):
 
 
 def yc(cube):
+    global steps
     #//rotate right right side clockwise with green facing you and red on top
     tempCube = cube.copy()
     start = 27
@@ -64,10 +66,12 @@ def yc(cube):
         cube[i+6+start] = tempCube[start+8-i*3]
 
     if(showSteps == True):
-        print("yc")
+        print(steps,": yc")
+        steps += 1
 
     return(cube)
 def ycc(cube):
+    global steps
     global showSteps
     showSteps = False
     cube = yc(cube)
@@ -77,10 +81,12 @@ def ycc(cube):
 
 
     if(showSteps == True):
-        print("ycc")
+        print(steps,": ycc")
+        steps += 1
 
     return(cube)
 def wc(cube):
+    global steps
     #//rotate right right side clockwise with green facing you and red on top
     tempCube = cube.copy()
     start = 9
@@ -95,10 +101,12 @@ def wc(cube):
         cube[i+6+start] = tempCube[start+8-i*3]
 
     if(showSteps == True):
-        print("wc")
+        print(steps,": wc")
+        steps += 1
 
     return(cube)
 def wcc(cube):
+    global steps
     global showSteps
     showSteps = False
     cube = wc(cube)
@@ -107,10 +115,12 @@ def wcc(cube):
     showSteps = True
 
     if(showSteps == True):
-        print("wcc")
+        print(steps,": wcc")
+        steps += 1
 
     return(cube)
 def rc(cube):
+    global steps
     #//rotate right right side clockwise with green facing you and red on top
     tempCube = cube.copy()
     start = 0
@@ -125,10 +135,12 @@ def rc(cube):
         cube[i+6+start] = tempCube[start+8-i*3]
     
     if(showSteps == True):
-        print("rc")
+        print(steps,": rc")
+        steps += 1
 
     return(cube)
 def rcc(cube):
+    global steps
     global showSteps
     showSteps = False
     cube = rc(cube)
@@ -137,10 +149,12 @@ def rcc(cube):
     showSteps = True
 
     if(showSteps == True):
-        print("rcc")
+        print(steps,": rcc")
+        steps += 1
 
     return(cube)
 def oc(cube):
+    global steps
     #rotate bottom side clockwise with green facing you and red on top
     tempCube = cube.copy()
     start = 36
@@ -155,10 +169,12 @@ def oc(cube):
         cube[i+6+start] = tempCube[start+8-i*3]
     
     if(showSteps == True):
-        print("oc")
+        print(steps,": oc")
+        steps += 1
 
     return(cube)
 def occ(cube):
+    global steps
     global showSteps
     showSteps = False
     cube = oc(cube)
@@ -167,11 +183,13 @@ def occ(cube):
     showSteps = True
 
     if(showSteps == True):
-        print("occ")
+        print(steps,": occ")
+        steps += 1
 
     return(cube)
     
 def gc(cube):
+    global steps
     tempCube = cube.copy()
     start = 18
     for i in range(3): #(i=0i<3i++)
@@ -185,10 +203,12 @@ def gc(cube):
         cube[i+6+start] = tempCube[start+8-i*3]
 
     if(showSteps == True):
-        print("gc")
+        print(steps,": gc")
+        steps += 1
 
     return(cube)
 def gcc(cube):
+    global steps
     global showSteps
     showSteps = False
     cube = gc(cube)
@@ -197,10 +217,12 @@ def gcc(cube):
     showSteps = True
 
     if(showSteps == True):
-        print("gcc")
+        print(steps,": gcc")
+        steps += 1
     
     return(cube)
 def bc(cube):
+    global steps
     #//rotate right right side clockwise with green facing you and red on top
     tempCube = cube.copy()
     start = 53
@@ -217,10 +239,12 @@ def bc(cube):
         cube[start-i-6] = tempCube[start-8+i*3]
 
     if(showSteps == True):
-        print("bc")
+        print(steps,": bc")
+        steps += 1
 
     return(cube)
 def bcc(cube):
+    global steps
     global showSteps
     showSteps = False
     cube = bc(cube)
@@ -229,11 +253,12 @@ def bcc(cube):
     showSteps = True
 
     if(showSteps == True):
-        print("bcc")
+        print(steps,": bcc")
+        steps += 1
 
     return(cube)
 
-def blueCross(cube):
+def blueFlower(cube):
     debug = True
     blues = 0
     print("entering blue cross phase")
@@ -627,6 +652,45 @@ def greenCorners(cube):
     return(cube)
 
 
+def prepEdge(cube, location):
+    if(location == 0):
+        cube = bc(cube)
+        cube = rc(cube)
+        cube = bcc(cube)
+        cube = rcc(cube)
+        cube = bcc(cube)
+        cube = wcc(cube)
+        cube = bc(cube)
+        cube = wc(cube)
+    elif(location == 1):
+        cube = bc(cube)
+        cube = yc(cube)
+        cube = bcc(cube)
+        cube = ycc(cube)
+        cube = bcc(cube)
+        cube = rcc(cube)
+        cube = bc(cube)
+        cube = rc(cube)
+    elif(location == 2):
+        cube = bc(cube)
+        cube = oc(cube)
+        cube = bcc(cube)
+        cube = occ(cube)
+        cube = bcc(cube)
+        cube = ycc(cube)
+        cube = bc(cube)
+        cube = yc(cube)
+    elif(location == 3):
+        cube = bc(cube)
+        cube = wc(cube)
+        cube = bcc(cube)
+        cube = wcc(cube)
+        cube = bcc(cube)
+        cube = occ(cube)
+        cube = bc(cube)
+        cube = oc(cube)
+    return cube
+
 def edges(cube):
     allEdges = ( (10, 3) , (5, 28) , (34, 41) , (16, 39) , (1, 52) , (32, 50) , (43, 46) , (12, 48) )
     allColors = ( (cube[10], cube[3]) , (cube[5], cube[28]) , (cube[34], cube[41]) , (cube[16], cube[39]) , (cube[1], cube[52]) , (cube[32], cube[50]) , (cube[43], cube[46]) , (cube[12], cube[48]) )
@@ -634,137 +698,477 @@ def edges(cube):
     topEdges = ( (1, 52) , (32, 50) , (43, 46) , (12, 48) )
     
     #white red edge
+    allColors = ( (cube[10], cube[3]) , (cube[5], cube[28]) , (cube[34], cube[41]) , (cube[16], cube[39]) , (cube[1], cube[52]) , (cube[32], cube[50]) , (cube[43], cube[46]) , (cube[12], cube[48]) )
+    print("white red edge")
+    printCube(cube)
     correct = allEdges[0]
     colors = ('r', 'w')
     location = -1
     for i in range(8):
         if(colors[0] in allColors[i] and colors[1] in allColors[i]):
-            print(i)
             location = i
             break
-    print(colors[0], allColors[location])
+
+    cube = prepEdge(cube, location)
+
+    allColors = ( (cube[10], cube[3]) , (cube[5], cube[28]) , (cube[34], cube[41]) , (cube[16], cube[39]) , (cube[1], cube[52]) , (cube[32], cube[50]) , (cube[43], cube[46]) , (cube[12], cube[48]) )
+   
+    for i in range(8):
+        if(colors[0] in allColors[i] and colors[1] in allColors[i]):
+            location = i
+            break
+
     if colors[0] == allColors[location][0]:
         while not(cube[52] in colors and cube[1] in colors):
             cube = bc(cube)
+        cube = bcc(cube)
+        cube = wcc(cube)
+        cube = bc(cube)
+        cube = wc(cube)
+        cube = bc(cube)
+        cube = rc(cube)
+        cube = bcc(cube)
+        cube = rcc(cube)
     else:
-        print('white red')
+        while not(cube[48] in colors and cube[12] in colors):
+            cube = bc(cube)
+        cube = bc(cube)
+        cube = rc(cube)
+        cube = bcc(cube)
+        cube = rcc(cube)
+        cube = bcc(cube)
+        cube = wcc(cube)
+        cube = bc(cube)
+        cube = wc(cube)
 
-        
+    #red yellow edge
+    allColors = ( (cube[10], cube[3]) , (cube[5], cube[28]) , (cube[34], cube[41]) , (cube[16], cube[39]) , (cube[1], cube[52]) , (cube[32], cube[50]) , (cube[43], cube[46]) , (cube[12], cube[48]) )
+    print("red yellow edge")
+    printCube(cube)
+    e = 1
+    correct = allEdges[e]
+    colors = ('y', 'r')
+    location = -1
+    for i in range(8):
+        if(colors[0] in allColors[i] and colors[1] in allColors[i]):
+            location = i
+            break
+
+    cube = prepEdge(cube, location)
+
+    allColors = ( (cube[10], cube[3]) , (cube[5], cube[28]) , (cube[34], cube[41]) , (cube[16], cube[39]) , (cube[1], cube[52]) , (cube[32], cube[50]) , (cube[43], cube[46]) , (cube[12], cube[48]) )
+   
+    for i in range(8):
+        if(colors[0] in allColors[i] and colors[1] in allColors[i]):
+            location = i
+            break
+
+    if colors[0] == allColors[location][0]:
+        while not(cube[50] in colors and cube[32] in colors):
+            cube = bc(cube)
+        cube = bcc(cube)
+        cube = rcc(cube)
+        cube = bc(cube)
+        cube = rc(cube)
+        cube = bc(cube)
+        cube = yc(cube)
+        cube = bcc(cube)
+        cube = ycc(cube)
+    else:
+        while not(cube[52] in colors and cube[1] in colors):
+            cube = bc(cube)
+        cube = bc(cube)
+        cube = yc(cube)
+        cube = bcc(cube)
+        cube = ycc(cube)
+        cube = bcc(cube)
+        cube = rcc(cube)
+        cube = bc(cube)
+        cube = rc(cube)
+    
+    #yellow orange edge
+    allColors = ( (cube[10], cube[3]) , (cube[5], cube[28]) , (cube[34], cube[41]) , (cube[16], cube[39]) , (cube[1], cube[52]) , (cube[32], cube[50]) , (cube[43], cube[46]) , (cube[12], cube[48]) )
+    print("yellow orange edge")
+    printCube(cube)
+    e = 2
+    correct = allEdges[e]
+    colors = ('o', 'y')
+    location = -1
+    for i in range(8):
+        if(colors[0] in allColors[i] and colors[1] in allColors[i]):
+            location = i
+            break
+    
+    cube = prepEdge(cube, location)
+
+    allColors = ( (cube[10], cube[3]) , (cube[5], cube[28]) , (cube[34], cube[41]) , (cube[16], cube[39]) , (cube[1], cube[52]) , (cube[32], cube[50]) , (cube[43], cube[46]) , (cube[12], cube[48]) )
+   
+    for i in range(8):
+        if(colors[0] in allColors[i] and colors[1] in allColors[i]):
+            location = i
+            break
+
+    if colors[0] == allColors[location][0]:
+        while not(cube[46] in colors and cube[43] in colors):
+            cube = bc(cube)
+        cube = bcc(cube)
+        cube = ycc(cube)
+        cube = bc(cube)
+        cube = yc(cube)
+        cube = bc(cube)
+        cube = oc(cube)
+        cube = bcc(cube)
+        cube = occ(cube)
+    else:
+        while not(cube[50] in colors and cube[32] in colors):
+            cube = bc(cube)
+        cube = bc(cube)
+        cube = oc(cube)
+        cube = bcc(cube)
+        cube = occ(cube)
+        cube = bcc(cube)
+        cube = ycc(cube)
+        cube = bc(cube)
+        cube = yc(cube)
+
+    #orange white edge
+    allColors = ( (cube[10], cube[3]) , (cube[5], cube[28]) , (cube[34], cube[41]) , (cube[16], cube[39]) , (cube[1], cube[52]) , (cube[32], cube[50]) , (cube[43], cube[46]) , (cube[12], cube[48]) )
+    print("orange white edge")
+    printCube(cube)
+    e = 3
+    correct = allEdges[e]
+    colors = ('w', 'o')
+    location = -1
+    for i in range(8):
+        if(colors[0] in allColors[i] and colors[1] in allColors[i]):
+            location = i
+            break
+
+    cube = prepEdge(cube, location)
+
+    allColors = ( (cube[10], cube[3]) , (cube[5], cube[28]) , (cube[34], cube[41]) , (cube[16], cube[39]) , (cube[1], cube[52]) , (cube[32], cube[50]) , (cube[43], cube[46]) , (cube[12], cube[48]) )
+   
+    for i in range(8):
+        if(colors[0] in allColors[i] and colors[1] in allColors[i]):
+            location = i
+            break
+
+    if colors[0] == allColors[location][0]:
+        while not(cube[48] in colors and cube[12] in colors):
+            cube = bc(cube)
+        cube = bcc(cube)
+        cube = occ(cube)
+        cube = bc(cube)
+        cube = oc(cube)
+        cube = bc(cube)
+        cube = wc(cube)
+        cube = bcc(cube)
+        cube = wcc(cube)
+    else:
+        while not(cube[46] in colors and cube[43] in colors):
+            cube = bc(cube)
+        cube = bc(cube)
+        cube = wc(cube)
+        cube = bcc(cube)
+        cube = wcc(cube)
+        cube = bcc(cube)
+        cube = occ(cube)
+        cube = bc(cube)
+        cube = oc(cube)
+
+    
         
     return cube
     
+def blueCross(cube):
+    crossColors = (cube[46],cube[48],cube[50],cube[52])
+    if not(cube[46] == 'b' and cube[48] == 'b' and cube[50] == 'b' and cube[52] == 'b'):
+        if not(cube[46] == 'b' or cube[48] == 'b' or cube[50] == 'b' or cube[52] == 'b'):
+            print(1)
+            cube = oc(cube)
+            cube = wc(cube)
+            cube = bc(cube)
+            cube = wcc(cube)
+            cube = bcc(cube)
+            cube = occ(cube)
+        printCube(cube)
 
+        while(1):
+            cube = bc(cube)
+            if(cube[50] == 'b' and cube[52] == 'b'):
+                break
+            elif(cube[50] == 'b' and cube[48] == 'b'):
+                break
+        printCube(cube)
+        if(cube[50] == 'b'  and cube[52] == 'b'):
+            print(2)
+            cube = oc(cube)
+            cube = wc(cube)
+            cube = bc(cube)
+            cube = wcc(cube)
+            cube = bcc(cube)
+            cube = occ(cube)
+            cube = oc(cube)
+            cube = wc(cube)
+            cube = bc(cube)
+            cube = wcc(cube)
+            cube = bcc(cube)
+            cube = occ(cube)
+        elif( cube[50] == 'b'  and cube[48] == 'b'  ):
+            print(3)
+            cube = oc(cube)
+            cube = wc(cube)
+            cube = bc(cube)
+            cube = wcc(cube)
+            cube = bcc(cube)
+            cube = occ(cube)
+
+
+
+    return cube
+
+
+def blueCrossSides(cube):
+    if not(cube[1]== 'r' and cube[12] == 'w' and cube[43] == 'o' and cube[32] == 'y'):
+        print('test1')
+        while(not(cube[1]== 'r' and cube[12] == 'w' and cube[43] == 'o' and cube[32] == 'y')):
+            if cube[1] == 'r' and cube[12] == 'w':
+                cube = wc(cube)
+                cube = bc(cube)
+                cube = wcc(cube)
+                cube = bc(cube)
+                cube = wc(cube)
+                cube = bc(cube)
+                cube = bc(cube)
+                cube = wcc(cube)
+                cube = bc(cube)
+            elif cube[12] == 'w' and cube[43] == 'o':
+                cube = oc(cube)
+                cube = bc(cube)
+                cube = occ(cube)
+                cube = bc(cube)
+                cube = oc(cube)
+                cube = bc(cube)
+                cube = bc(cube)
+                cube = occ(cube)
+                cube = bc(cube)
+            elif cube[43] == 'o' and cube[32] == 'y':
+                cube = yc(cube)
+                cube = bc(cube)
+                cube = ycc(cube)
+                cube = bc(cube)
+                cube = yc(cube)
+                cube = bc(cube)
+                cube = bc(cube)
+                cube = ycc(cube)
+                cube = bc(cube)
+            elif cube[32] == 'y' and cube[1] == 'r':
+                cube = rc(cube)
+                cube = bc(cube)
+                cube = rcc(cube)
+                cube = bc(cube)
+                cube = rc(cube)
+                cube = bc(cube)
+                cube = bc(cube)
+                cube = rcc(cube)
+                cube = bc(cube)
+            elif cube[1] == 'r' and cube[43] == 'o':
+                cube = oc(cube)
+                cube = bc(cube)
+                cube = occ(cube)
+                cube = bc(cube)
+                cube = oc(cube)
+                cube = bc(cube)
+                cube = bc(cube)
+                cube = occ(cube)
+                cube = bc(cube)
+            elif cube[12] == 'w' and cube[32] == 'y':
+                cube = yc(cube)
+                cube = bc(cube)
+                cube = ycc(cube)
+                cube = bc(cube)
+                cube = yc(cube)
+                cube = bc(cube)
+                cube = bc(cube)
+                cube = ycc(cube)
+                cube = bc(cube)
+            else:
+                cube = bc(cube)
+
+
+
+
+
+    return cube
+
+def blueCornersPrep(cube):
+    count = 0
+    while(count != 4):
+        corners = ((cube[0],cube[9],cube[51]) , (cube[29],cube[2],cube[53]) , (cube[44], cube[35], cube[47]) , (cube[15], cube[42], cube[45]))
+        correctCorners = (('r','w','b') , ('y', 'r' , 'b') , ('o', 'y', 'b') , ('w', 'o', 'b'))
+    
+        count = 0
+        for i in range(4):
+            if(corners[i][0] in correctCorners[i] and corners[i][1] in correctCorners[i] and corners[i][2] in correctCorners[i]):
+                print(corners[i])
+                c = i
+                count += 1
+
+        if count == 0:
+            cube = bc(cube)
+            cube = rc(cube)
+            cube = bcc(cube)
+            cube = occ(cube)
+            cube = bc(cube) 
+            cube = rcc(cube)
+            cube = bcc(cube)
+            cube = oc(cube)
+        if count == 1:
+            if c == 0:
+                cube = bc(cube)
+                cube = rc(cube)
+                cube = bcc(cube)
+                cube = occ(cube)
+                cube = bc(cube) 
+                cube = rcc(cube)
+                cube = bcc(cube)
+                cube = oc(cube)
+            if c == 1:
+                cube = bc(cube)
+                cube = yc(cube)
+                cube = bcc(cube)
+                cube = wcc(cube)
+                cube = bc(cube) 
+                cube = ycc(cube)
+                cube = bcc(cube)
+                cube = wc(cube)
+            if c == 2:
+                cube = bc(cube)
+                cube = oc(cube)
+                cube = bcc(cube)
+                cube = rcc(cube)
+                cube = bc(cube) 
+                cube = occ(cube)
+                cube = bcc(cube)
+                cube = rc(cube)
+            if c == 3:
+                cube = bc(cube)
+                cube = wc(cube)
+                cube = bcc(cube)
+                cube = ycc(cube)
+                cube = bc(cube) 
+                cube = wcc(cube)
+                cube = bcc(cube)
+                cube = yc(cube)
+
+            
+
+
+    return cube
+
+def blueCorners(cube):
+    corners = ((cube[0],cube[9],cube[51]) , (cube[29],cube[2],cube[53]) , (cube[44], cube[35], cube[47]) , (cube[15], cube[42], cube[45]))
+
+    for i in range(4):
+        while corners[0][2] != 'b':
+            cube = rcc(cube)
+            cube = gcc(cube)
+            cube = rc(cube)
+            cube = gc(cube)
+
+            corners = ((cube[0],cube[9],cube[51]) , (cube[29],cube[2],cube[53]) , (cube[44], cube[35], cube[47]) , (cube[15], cube[42], cube[45]))
+        cube = bc(cube)
+        corners = ((cube[0],cube[9],cube[51]) , (cube[29],cube[2],cube[53]) , (cube[44], cube[35], cube[47]) , (cube[15], cube[42], cube[45]))
+
+
+
+
+
+
+
+    return cube
 '''
 string awayclock(string cube)*/'''
 
 def populateCube():
+    rSide = "rrrrrrrrr"
+    wSide = "wwwwwwwww"
     gSide = "ggggggggg"
     ySide = "yyyyyyyyy"
-    bSide = "bbbbbbbbb"
-    wSide = "wwwwwwwww"
-    rSide = "rrrrrrrrr"
     oSide = "ooooooooo"
+    bSide = "bbbbbbbbb"
+
+    rSide = input("Enter the red side with the blue side on top:")
+    wSide = input("Enter the white side with the red side on top:")
+    gSide = input("Enter the green side with the red side on top:")
+    ySide = input("Enter the yellow side with the red side on top:")
+    oSide = input("Enter the orange side with the green side on top:")
+    bSide = input("Enter the blue side with the orange side on top:")
+
+    
     cube = str(rSide+wSide+gSide+ySide+oSide+bSide)
     return cube
 
 def main():
-    """
-    #int i,j
-    print("This program is going to solve a rubik's cube")
-    /*print( "Enter the colors of the side with \na green center piece:\n"
-    string gSide
-    cin >> gSide
-    print(gSide,endl
-    print( "\nEnter the colors of the side with \na yellow center piece:\n"
-    string ySide
-    cin >> ySide
-    print(ySide,endl
-    print( "\nEnter the colors of the side with \na blue center piece:\n"
-    string bSide
-    cin >> bSide
-    print(bSide,endl
-    print( "\nEnter the colors of the side with \na white center piece:\n"
-    string wSide
-    cin >> wSide
-    print(wSide,endl
-    print( "\nEnter the colors of the side with \na red center piece:\n"
-    string rSide
-    cin >> rSide
-    print(rSide,endl
-    print( "\nEnter the colors of the side with \na orange center piece:\n"
-    string oSide
-    cin >> oSide
-    print(oSide,endl
-
-    string cube = rSide+wSide+gSide+ySide+oSide+bSide
-    print( cube,endl*/
-
-    string gSide = "ggggggggg"
-    string ySide = "yyyyyyyyy"
-    string bSide = "bbbbbbbbb"
-    string wSide = "wwwwwwwww"
-    string rSide = "rrrrrrrrr"
-    string oSide = "ooooooooo"
-    string cube = rSide+wSide+gSide+ySide+oSide+bSide
-    print( cube,endl
-    printCube(cube)
-    cube = leftclock(cube)
-    printCube(cube)
-    cube = topclock(cube)
-    printCube(cube)
-    cube = leftclock(cube)
-    print( "test"
-    printCube(cube)
-    cube = bottomclock(cube)
-    """
+    global steps
+    steps = 0
     
     cube = populateCube()
     cube = list(cube)
     
-    #for i in range(54):
-    #    cube[i] = i
+    # for i in range(54):
+    #     cube[i] = i
     solution = cube.copy()
     printCube(cube)
-    for i in range(10):
+    # for i in range(100):
         
-        x = random.randint(1,6)
-        if(x==0):
-            continue
-        if(x==1):
-            #print(x)
-            cube = yc(cube)
+    #     x = random.randint(1,6)
+    #     if(x==0):
+    #         continue
+    #     if(x==1):
+    #         #print(x)
+    #         cube = yc(cube)
 
-        if(x==2):
-            cube = bc(cube)
+    #     if(x==2):
+    #         cube = bc(cube)
 
-        if(x==3):
-            cube = wc(cube)
+    #     if(x==3):
+    #         cube = wc(cube)
         
-        if(x==4):
-            cube = gc(cube)
+    #     if(x==4):
+    #         cube = gc(cube)
         
-        if(x==5):
-            cube = oc(cube)
+    #     if(x==5):
+    #         cube = oc(cube)
 
-        if(x==6):
-            cube = rc(cube)
-        if(i%100000 == 0):
-            print(i)
-        if (cube == solution):
-            print(i)
-            break
-        
+    #     if(x==6):
+    #         cube = rc(cube)
+    #     if(i%100000 == 0):
+    #         print(i)
+    #     if (cube == solution):
+    #         print(i)
+    #         break
+    steps = 0
 
     printCube(cube)
-    cube = blueCross(cube)
+    cube = blueFlower(cube)
     printCube(cube)
     cube = greenCross(cube)
     printCube(cube)
     cube = greenCorners(cube)
+    printCube(cube)
     cube = edges(cube)
+    printCube(cube)
+    cube = blueCross(cube)
+    printCube(cube)
+    cube = blueCrossSides(cube)
+    printCube(cube)
+    cube = blueCornersPrep(cube)
+    printCube(cube)
+    cube = blueCorners(cube)
     printCube(cube)
 
     return 0
 
-
-main()
+for i in range(1):
+    main()

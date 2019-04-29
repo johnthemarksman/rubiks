@@ -1,153 +1,400 @@
-      r r r       
-      r r r       
-      r r r       
-w w w g g g y y y 
-w w w g g g y y y 
-w w w g g g y y y 
-      o o o       
-      o o o       
-      o o o       
-      b b b       
-      b b b       
-      b b b       
-
-rc
-0
-wc
-wc
-rc
-gc
-bc
-rc
-wc
-wc
-gc
-      y r g       
-      r r y       
-      w o o       
-o g g r w w b b w 
-o w y g g w r y o 
-b b w b b o y y r 
+      r o y       
       r r b       
-      w o o       
-      y w g       
-      r g y       
-      g b b       
-      g y o       
-
-entering blue cross phase
-21
-bc
-wc
-wc
-16
-bc
-bc
-oc
-oc
-oc
-occ
-0
-leaving blue cross phase
-      b o w       
-      w r y       
-      o o o       
-y b y g w w b b g 
-w w r y g w r y y 
-o b o y y w b b y 
-      b o r       
-      r o o       
-      w r r       
-      g g g       
-      g b g       
-      r g r       
-
-yc
-yc
-wc
-wc
-bc
-bc
-oc
-oc
-rc
-rc
-      r o w       
-      o r r       
-      o r o       
-y b y g g w b b o 
-r w w g g g y y r 
-g b o y g w b b y 
-      b o r       
-      y o w       
-      w o b       
-      r y r       
-      w b y       
-      g w g       
-
-bc
-bc
-bc
-wc
-wc
-wc
-wcc
-bc
-bc
-bc
-bcc
-wc
-bc
-wc
-wc
-wc
-wcc
-bc
-bc
-bc
-bcc
-wc
-bc
-wc
-wc
-wc
-wcc
-bc
-bc
-bc
-bcc
-wc
-bc
-wc
-wc
-wc
-wcc
-bc
-bc
-bc
-bcc
-wc
-bc
-wc
-wc
-wc
-wcc
-bc
-bc
-bc
-bcc
-wc
-bc
-      o r y       
-      y r r       
-      r r o       
-g o w g g w b b r 
-r w w g g g y y o 
-o b o y g w b b r 
-      b o r       
-      y o w       
+      b w g       
+y y r y r w o o o 
+b w w o g g w y y 
+w y b r y o g w o 
       w b y       
       g o b       
+      r r w       
+      g g b       
+      r b o       
+      g g b       
+
+      r o y       
+      r r b       
+      b w g       
+y y r y r w o o o 
+b w w o g g w y y 
+w y b r y o g w o 
+      w b y       
+      g o b       
+      r r w       
+      g g b       
+      r b o       
+      g g b       
+
+entering blue cross phase
+23
+0 : yc
+1 : yc
+39
+2 : wc
+0
+leaving blue cross phase
+      g o y       
+      r r b       
+      g w w       
+w b y r r b o w g 
+y w y r g o y y w 
+b w r b y b o o o 
+      y b y       
+      o o b       
+      r r g       
+      w g w       
+      g b g       
+      r g o       
+
+3 : bc
+4 : bc
+5 : oc
+6 : oc
+7 : yc
+8 : yc
+9 : rc
+10 : rc
+11 : wc
+12 : wc
+      g w g       
+      b r r       
+      y r g       
+w o o b g w o b y 
+y w w g g g y y y 
+g w r b g w b w o 
+      y o r       
+      o o b       
       y b w       
-      y w g       
+      o y b       
+      r b o       
+      r r r       
+
+green red white corner
+13 : wcc
+14 : bcc
+15 : wc
+16 : bc
+17 : wcc
+18 : bcc
+19 : wc
+20 : bc
+21 : wcc
+22 : bcc
+23 : wc
+24 : bc
+25 : wcc
+26 : bcc
+27 : wc
+28 : bc
+29 : wcc
+30 : bcc
+31 : wc
+32 : bc
+green yellow red corner
+33 : rcc
+34 : bcc
+35 : rc
+36 : bc
+green white orange corner
+37 : bc
+38 : bc
+39 : occ
+40 : bcc
+41 : oc
+42 : bc
+green orange yellow corner
+43 : bc
+44 : bc
+45 : ycc
+46 : bcc
+47 : yc
+48 : bc
+49 : ycc
+50 : bcc
+51 : yc
+52 : bc
+53 : ycc
+54 : bcc
+55 : yc
+56 : bc
+      r o b       
+      r r b       
+      r r r       
+b y w g g g y y y 
+r w w g g g y y y 
+b r w g g g y w r 
+      o o o       
+      w o b       
+      w o b       
+      o b w       
+      b b o       
+      y w o       
+
+white red edge
+      r o b       
+      r r b       
+      r r r       
+b y w g g g y y y 
+r w w g g g y y y 
+b r w g g g y w r 
+      o o o       
+      w o b       
+      w o b       
+      o b w       
+      b b o       
+      y w o       
+
+57 : bc
+58 : wc
+59 : bcc
+60 : wcc
+61 : bcc
+62 : occ
+63 : bc
+64 : oc
+65 : bcc
+66 : wcc
+67 : bc
+68 : wc
+69 : bc
+70 : rc
+71 : bcc
+72 : rcc
+red yellow edge
+      y b o       
+      r r b       
+      r r r       
+b w w g g g y y w 
+y w w g g g y y w 
+y b w g g g y w r 
+      o o o       
+      o o b       
+      r y b       
+      b r w       
+      o b o       
+      o r b       
+
+73 : bc
+74 : bcc
+75 : rcc
+76 : bc
+77 : rc
+78 : bc
+79 : yc
+80 : bcc
+81 : ycc
+yellow orange edge
+      y b r       
+      r r r       
+      r r r       
+b w w g g g y y b 
+b w w g g g y y y 
+b b w g g g y w b 
+      o o o       
+      o o b       
+      y o o       
+      r w w       
+      y b o       
+      o r w       
+
+82 : bc
+83 : oc
+84 : bcc
+85 : occ
+86 : bcc
+87 : ycc
+88 : bc
+89 : yc
+orange white edge
+      r w b       
+      r r r       
+      r r r       
+w w w g g g y y r 
+b w w g g g y y b 
+y b w g g g y y b 
+      o o o       
+      o o o       
+      b b o       
+      o y w       
+      w b r       
+      b o y       
+
+90 : bc
+91 : bcc
+92 : occ
+93 : bc
+94 : oc
+95 : bc
+96 : wc
+97 : bcc
+98 : wcc
+      b w r       
+      r r r       
+      r r r       
+o w w g g g y y y 
+b w w g g g y y o 
+r w w g g g y y b 
+      o o o       
+      o o o       
+      w b o       
+      b y w       
+      r b b       
+      y b b       
+
+      b w r       
+      r r r       
+      r r r       
+o w w g g g y y y 
+b w w g g g y y o 
+r w w g g g y y b 
+      o o o       
+      o o o       
+      w b o       
+      b y w       
+      r b b       
+      y b b       
+
+99 : bc
+100 : bc
+101 : bc
+102 : bc
+      b w r       
+      r r r       
+      r r r       
+o w w g g g y y y 
+b w w g g g y y o 
+r w w g g g y y b 
+      o o o       
+      o o o       
+      w b o       
+      b y w       
+      r b b       
+      y b b       
+
+2
+103 : oc
+104 : wc
+105 : bc
+106 : wcc
+107 : bcc
+108 : occ
+109 : oc
+110 : wc
+111 : bc
+112 : wcc
+113 : bcc
+114 : occ
+      o y b       
+      r r r       
+      r r r       
+y w w g g g y y r 
+w w w g g g y y o 
+b w w g g g y y o 
+      o o o       
+      o o o       
+      r r w       
+      w b b       
+      b b b       
+      b b y       
+
+test1
+115 : bc
+116 : bc
+117 : bc
+118 : yc
+119 : bc
+120 : ycc
+121 : bc
+122 : yc
+123 : bc
+124 : bc
+125 : ycc
+126 : bc
+      b r r       
+      r r r       
+      r r r       
+w w w g g g y y b 
+w w w g g g y y y 
+y w w g g g y y o 
+      o o o       
+      o o o       
+      r o b       
+      b b y       
+      b b b       
+      o b w       
+
+('b', 'o', 'y')
+127 : bc
+128 : oc
+129 : bcc
+130 : rcc
+131 : bc
+132 : occ
+133 : bcc
+134 : rc
+('b', 'o', 'y')
+135 : bc
+136 : oc
+137 : bcc
+138 : rcc
+139 : bc
+140 : occ
+141 : bcc
+142 : rc
+('r', 'w', 'b')
+('r', 'b', 'y')
+('b', 'o', 'y')
+('w', 'o', 'b')
+      r r b       
+      r r r       
+      r r r       
+w w w g g g y y r 
+w w w g g g y y y 
+w w w g g g y y o 
+      o o o       
+      o o o       
+      o o b       
+      b b y       
+      b b b       
+      b b y       
+
+143 : bc
+144 : rcc
+145 : gcc
+146 : rc
+147 : gc
+148 : rcc
+149 : gcc
+150 : rc
+151 : gc
+152 : rcc
+153 : gcc
+154 : rc
+155 : gc
+156 : rcc
+157 : gcc
+158 : rc
+159 : gc
+160 : bc
+161 : rcc
+162 : gcc
+163 : rc
+164 : gc
+165 : rcc
+166 : gcc
+167 : rc
+168 : gc
+169 : bc
+170 : bc
+      r r r       
+      r r r       
+      r r r       
+w w w g g g y y y 
+w w w g g g y y y 
+w w w g g g y y y 
+      o o o       
+      o o o       
+      o o o       
+      b b b       
+      b b b       
+      b b b       
 
