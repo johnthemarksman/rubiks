@@ -4,8 +4,43 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 import numpy
 
-cube = ""
+cubeIndex = 0
+
+bla = (0,0,0)
+g = (0,1,0)
+b = (0,0,1)
+r = (1,0,0)
+y = (1,1,0)
+o = (1,.5,0)
+w = (1,1,1)
+cube = "rrrrrrrrrwwwwwwwwwgggggggggyyyyyyyyyooooooooobbbbbbbbb"
+
+cubeColors = []
+
+for i in cube:
+    if i == 'r':
+        cubeColors.append(r)
+    elif i == 'w':
+        cubeColors.append(w)
+    elif i == 'g':
+        cubeColors.append(g)
+    elif i == 'y':
+        cubeColors.append(y)
+    elif i == 'o':
+        cubeColors.append(o)
+    elif i == 'b':
+        cubeColors.append(b)
+
+colors = []
+
+for i in range(27):
+    colors.append([r,r,r,r,r,r])
+
+colors[0][1] = y
+
+
 class Cube:
+    global cubeIndex
     x = 0
     y = 0
     z = 0
@@ -44,13 +79,8 @@ class Cube:
         (2,3,7,6)
     )
 
-    g = (0,1,0)
-    b = (0,0,1)
-    r = (1,0,0)
-    w = (1,1,1)
 
-
-    colors = [g,g,g,g,g,g]
+    # colors = [g,g,g,g,g,g]
 
     def __init__(self, mul=1, x=0, y=0, z=0):
         self.x = x
@@ -77,13 +107,15 @@ class Cube:
         glEnd()
 
     def draw_sides(self):
+        global cubeIndex
         glBegin(GL_QUADS)
         i = 0
         for surface in self.surfaces:
             for vertex in surface:
-                glColor3f(self.colors[i][0],self.colors[i][1],self.colors[i][2])
+                glColor3f(colors[cubeIndex][i][0],colors[cubeIndex][i][1],colors[cubeIndex][i][2])
                 glVertex3fv(self.vertices[vertex])
             i += 1
+        cubeIndex += 1
 
         glEnd()
 
@@ -92,6 +124,7 @@ class Cube:
 
 
 def main():
+    global cubeIndex
     pygame.init()
     display = (800,800)
     pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
@@ -114,8 +147,33 @@ def main():
     #     if c.x == 3:
     #         print(True)
     #         c.colors = (p[0].b,p[0].w,p[0].w,p[0].w,p[0].w,p[0].w,p[0].w)
-    p[26].colors = (p[0].w,p[0].w,p[0].w,p[0].w,p[0].w,p[0].w,p[0].w)
-    #p[1].colors[1] = p[0].w
+    #p[26].colors = (bla, bla, w, cubeColors[27], cubeColors[20], cubeColors[8], bla)
+
+    #white side
+    colors[6][1] = cubeColors[9]
+    colors[7][1] = cubeColors[10]
+    colors[8][1] = cubeColors[11]
+    colors[3][1] = cubeColors[12]
+    colors[4][1] = cubeColors[13]
+    colors[5][1] = cubeColors[14]
+    colors[0][1] = cubeColors[15]
+    colors[1][1] = cubeColors[16]
+    colors[2][1] = cubeColors[17]
+
+    #yellow side
+    for i in range(27):
+        if i >= 18:
+            colors[i][3] = cubeColors[53 - i]
+
+ 
+        
+
+    
+
+ 
+
+
+
 
     vel = 0.1
     clock = pygame.time.Clock()
@@ -123,6 +181,7 @@ def main():
     viewAngle = 0
     glTranslate(-2.5, -2.5, 7)
     while True:
+        cubeIndex = 0
         clock.tick(60)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
