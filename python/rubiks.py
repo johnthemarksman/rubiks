@@ -1110,7 +1110,7 @@ def populateCube():
     return cube
 
 def scramble(cube):
-    for i in range(100):
+    for i in range(10):
         x = random.randint(1,6)
         if(x==0):
             continue
