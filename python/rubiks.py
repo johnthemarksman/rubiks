@@ -72,7 +72,7 @@ def yc(cube):
         steps += 1
     
         moves.append("yc")
-        cubeStates.append(cube)
+        cubeStates.append(cube.copy())
 
     return(cube)
 def ycc(cube):
@@ -88,7 +88,7 @@ def ycc(cube):
     if(showSteps == True):
         print(steps,": ycc")
         steps += 1
-        cubeStates.append(cube)
+        cubeStates.append(cube.copy())
         moves.append("ycc")
     return(cube)
 def wc(cube):
@@ -110,7 +110,7 @@ def wc(cube):
         print(steps,": wc")
         steps += 1
 
-        cubeStates.append(cube)
+        cubeStates.append(cube.copy())
         moves.append("wc")
     return(cube)
 def wcc(cube):
@@ -126,7 +126,7 @@ def wcc(cube):
         print(steps,": wcc")
         steps += 1
 
-        cubeStates.append(cube)
+        cubeStates.append(cube.copy())
         moves.append("wcc")
     return(cube)
 def rc(cube):
@@ -148,7 +148,7 @@ def rc(cube):
         print(steps,": rc")
         steps += 1
 
-        cubeStates.append(cube)
+        cubeStates.append(cube.copy())
         moves.append("rc")
     return(cube)
 def rcc(cube):
@@ -164,7 +164,7 @@ def rcc(cube):
         print(steps,": rcc")
         steps += 1
 
-        cubeStates.append(cube)
+        cubeStates.append(cube.copy())
         moves.append("rcc")
     return(cube)
 def oc(cube):
@@ -186,7 +186,7 @@ def oc(cube):
         print(steps,": oc")
         steps += 1
 
-        cubeStates.append(cube)
+        cubeStates.append(cube.copy())
         moves.append("oc")
     return(cube)
 def occ(cube):
@@ -202,7 +202,7 @@ def occ(cube):
         print(steps,": occ")
         steps += 1
 
-        cubeStates.append(cube)
+        cubeStates.append(cube.copy())
         moves.append("occ")
     return(cube)
     
@@ -224,7 +224,7 @@ def gc(cube):
         print(steps,": gc")
         steps += 1
 
-        cubeStates.append(cube)
+        cubeStates.append(cube.copy())
         moves.append("gc")
     return(cube)
 def gcc(cube):
@@ -240,7 +240,7 @@ def gcc(cube):
         print(steps,": gcc")
         steps += 1
 
-        cubeStates.append(cube)
+        cubeStates.append(cube.copy())
         moves.append("gcc")
     return(cube)
 def bc(cube):
@@ -263,8 +263,8 @@ def bc(cube):
     if(showSteps == True):
         print(steps,": bc")
         steps += 1
-
-        cubeStates.append(cube)
+        print(cube)
+        cubeStates.append(cube.copy())
         moves.append("bc")
     return(cube)
 def bcc(cube):
@@ -280,7 +280,7 @@ def bcc(cube):
         print(steps,": bcc")
         steps += 1
 
-        cubeStates.append(cube)
+        cubeStates.append(cube.copy())
         moves.append("bcc")
     return(cube)
 
@@ -1196,7 +1196,7 @@ def main():
     printCube(cube)
     cube = blueCorners(cube)
     printCube(cube)
-
+    
     print(cubeStates)
     print(moves)
 
