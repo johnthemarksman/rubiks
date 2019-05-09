@@ -1117,19 +1117,19 @@ def blueCorners(cube):
 string awayclock(string cube)*/'''
 
 def populateCube():
-    rSide = "rrrrrrrrr"
-    wSide = "wwwwwwwww"
-    gSide = "ggggggggg"
-    ySide = "yyyyyyyyy"
-    oSide = "ooooooooo"
-    bSide = "bbbbbbbbb"
+    # rSide = "rrrrrrrrr"
+    # wSide = "wwwwwwwww"
+    # gSide = "ggggggggg"
+    # ySide = "yyyyyyyyy"
+    # oSide = "ooooooooo"
+    # bSide = "bbbbbbbbb"
 
-    # rSide = input("Enter the red side with the blue side on top:")
-    # wSide = input("Enter the white side with the red side on top:")
-    # gSide = input("Enter the green side with the red side on top:")
-    # ySide = input("Enter the yellow side with the red side on top:")
-    # oSide = input("Enter the orange side with the green side on top:")
-    # bSide = input("Enter the blue side with the orange side on top:")
+    rSide = input("Enter the red side with the blue side on top:")
+    wSide = input("Enter the white side with the red side on top:")
+    gSide = input("Enter the green side with the red side on top:")
+    ySide = input("Enter the yellow side with the red side on top:")
+    oSide = input("Enter the orange side with the green side on top:")
+    bSide = input("Enter the blue side with the orange side on top:")
 
     
     cube = str(rSide+wSide+gSide+ySide+oSide+bSide)
@@ -1174,8 +1174,9 @@ def main():
     #     cube[i] = i
     solution = cube.copy()
     printCube(cube)
+    cubeStates.insert(0,cube.copy())
 
-    cube = scramble(cube)
+    #cube = scramble(cube)
 
     steps = 0
 
@@ -1196,7 +1197,7 @@ def main():
     printCube(cube)
     cube = blueCorners(cube)
     printCube(cube)
-    
+
     print(cubeStates)
     print(moves)
 
