@@ -13,6 +13,8 @@ string awayclock(string cube)*/"""
 
 showSteps = True
 steps = 0
+moves = []
+cubeStates = []
 
 def printCube(cube):
     #int i,j
@@ -68,6 +70,9 @@ def yc(cube):
     if(showSteps == True):
         print(steps,": yc")
         steps += 1
+    
+        moves.append("yc")
+        cubeStates.append(cube)
 
     return(cube)
 def ycc(cube):
@@ -83,7 +88,8 @@ def ycc(cube):
     if(showSteps == True):
         print(steps,": ycc")
         steps += 1
-
+        cubeStates.append(cube)
+        moves.append("ycc")
     return(cube)
 def wc(cube):
     global steps
@@ -104,6 +110,8 @@ def wc(cube):
         print(steps,": wc")
         steps += 1
 
+        cubeStates.append(cube)
+        moves.append("wc")
     return(cube)
 def wcc(cube):
     global steps
@@ -118,6 +126,8 @@ def wcc(cube):
         print(steps,": wcc")
         steps += 1
 
+        cubeStates.append(cube)
+        moves.append("wcc")
     return(cube)
 def rc(cube):
     global steps
@@ -138,6 +148,8 @@ def rc(cube):
         print(steps,": rc")
         steps += 1
 
+        cubeStates.append(cube)
+        moves.append("rc")
     return(cube)
 def rcc(cube):
     global steps
@@ -152,6 +164,8 @@ def rcc(cube):
         print(steps,": rcc")
         steps += 1
 
+        cubeStates.append(cube)
+        moves.append("rcc")
     return(cube)
 def oc(cube):
     global steps
@@ -172,6 +186,8 @@ def oc(cube):
         print(steps,": oc")
         steps += 1
 
+        cubeStates.append(cube)
+        moves.append("oc")
     return(cube)
 def occ(cube):
     global steps
@@ -186,6 +202,8 @@ def occ(cube):
         print(steps,": occ")
         steps += 1
 
+        cubeStates.append(cube)
+        moves.append("occ")
     return(cube)
     
 def gc(cube):
@@ -206,6 +224,8 @@ def gc(cube):
         print(steps,": gc")
         steps += 1
 
+        cubeStates.append(cube)
+        moves.append("gc")
     return(cube)
 def gcc(cube):
     global steps
@@ -219,7 +239,9 @@ def gcc(cube):
     if(showSteps == True):
         print(steps,": gcc")
         steps += 1
-    
+
+        cubeStates.append(cube)
+        moves.append("gcc")
     return(cube)
 def bc(cube):
     global steps
@@ -242,6 +264,8 @@ def bc(cube):
         print(steps,": bc")
         steps += 1
 
+        cubeStates.append(cube)
+        moves.append("bc")
     return(cube)
 def bcc(cube):
     global steps
@@ -256,6 +280,8 @@ def bcc(cube):
         print(steps,": bcc")
         steps += 1
 
+        cubeStates.append(cube)
+        moves.append("bcc")
     return(cube)
 
 def blueFlower(cube):
@@ -1171,7 +1197,8 @@ def main():
     cube = blueCorners(cube)
     printCube(cube)
 
-    return 0
+    print(cubeStates)
+    print(moves)
 
 for i in range(1):
     main()
