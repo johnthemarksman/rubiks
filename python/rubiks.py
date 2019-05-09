@@ -9,6 +9,10 @@ from OpenGL.GLU import *
 import numpy
 
 
+speed = 10  #this is the speed for the 3d cube
+randomize = True  #if this is true the cube will mix itself up randomly, set to false for user entered data
+
+
 
 """
 string printCube(string cube)
@@ -1125,19 +1129,20 @@ def blueCorners(cube):
 string awayclock(string cube)*/'''
 
 def populateCube():
-    # rSide = "rrrrrrrrr"
-    # wSide = "wwwwwwwww"
-    # gSide = "ggggggggg"
-    # ySide = "yyyyyyyyy"
-    # oSide = "ooooooooo"
-    # bSide = "bbbbbbbbb"
-
-    rSide = input("Enter the red side with the blue side on top:")
-    wSide = input("Enter the white side with the red side on top:")
-    gSide = input("Enter the green side with the red side on top:")
-    ySide = input("Enter the yellow side with the red side on top:")
-    oSide = input("Enter the orange side with the green side on top:")
-    bSide = input("Enter the blue side with the orange side on top:")
+    if randomize == True:
+        rSide = "rrrrrrrrr"
+        wSide = "wwwwwwwww"
+        gSide = "ggggggggg"
+        ySide = "yyyyyyyyy"
+        oSide = "ooooooooo"
+        bSide = "bbbbbbbbb"
+    else:
+        rSide = input("Enter the red side with the blue side on top:")
+        wSide = input("Enter the white side with the red side on top:")
+        gSide = input("Enter the green side with the red side on top:")
+        ySide = input("Enter the yellow side with the red side on top:")
+        oSide = input("Enter the orange side with the green side on top:")
+        bSide = input("Enter the blue side with the orange side on top:")
 
     
     cube = str(rSide+wSide+gSide+ySide+oSide+bSide)
@@ -1220,7 +1225,6 @@ for i in range(1):
 #################################   Start of 3d cube   ##################################
 
 cubeIndex = 0
-speed = 1
 bla = (0,0,0)
 g = (0,1,0)
 b = (0,0,1)
@@ -1762,7 +1766,7 @@ def cube3d():
             x = 0
         if keys[pygame.K_n]:
             curMove += 1
-
+        glClearColor(.5,.5,.5,0)
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
         #x = 0
         #glRotatef(x, 1.0, 0.0, 1.0)
