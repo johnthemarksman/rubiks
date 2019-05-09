@@ -5,7 +5,7 @@ from OpenGL.GLU import *
 import numpy
 
 cubeIndex = 0
-speed = 2
+speed = 10
 bla = (0,0,0)
 g = (0,1,0)
 b = (0,0,1)
@@ -521,7 +521,7 @@ def main():
     
 
 
-    vel = 10
+    vel = 4
     clock = pygame.time.Clock()
     x = 0
     viewAngle = 0
@@ -537,21 +537,21 @@ def main():
                 quit()
 
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_LEFT]:
-            glTranslatef(-vel, 0, 0)
-        if keys[pygame.K_RIGHT]:
-            glTranslatef(vel, 0, 0)
-        if keys[pygame.K_UP]:
-            glTranslatef(0, vel, 0)
-        if keys[pygame.K_DOWN]:
-            glTranslatef(0, -vel, 0)
-        if keys[pygame.K_t]:
-            glTranslatef(0, 0, vel)
-        if keys[pygame.K_g]:
-            glTranslatef(0, 0, -vel)
+        # if keys[pygame.K_LEFT]:
+        #     glTranslatef(-vel, 0, 0)
+        # if keys[pygame.K_RIGHT]:
+        #     glTranslatef(vel, 0, 0)
+        # if keys[pygame.K_UP]:
+        #     glTranslatef(0, vel, 0)
+        # if keys[pygame.K_DOWN]:
+        #     glTranslatef(0, -vel, 0)
+        # if keys[pygame.K_t]:
+        #     glTranslatef(0, 0, vel)
+        # if keys[pygame.K_g]:
+        #     glTranslatef(0, 0, -vel)
         if keys[pygame.K_d]:
             glTranslate(2.5, 2.5, 2.5)
-            glRotatef(1, 0,1,0)
+            glRotatef(vel, 0,1,0)
             glTranslate(-2.5, -2.5, -2.5)
         if keys[pygame.K_a]:
             glTranslate(2.5, 2.5, 2.5)
