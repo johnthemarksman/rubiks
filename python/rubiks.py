@@ -9,7 +9,7 @@ from OpenGL.GLU import *
 import numpy
 
 
-speed = 10  #this is the speed for the 3d cube
+speed = 1  #this is the speed for the 3d cube
 randomize = True  #if this is true the cube will mix itself up randomly, set to false for user entered data
 
 
@@ -1171,8 +1171,9 @@ def scramble(cube):
 
         if(x==6):
             cube = rc(cube)
-        if(i%100000 == 0):
-            print(i)
+        
+        cubeStates.clear()
+        moves.clear()
     return cube
 
 
@@ -1187,10 +1188,11 @@ def main():
     #     cube[i] = i
     solution = cube.copy()
     printCube(cube)
+    
+
+    if randomize == True:
+        cube = scramble(cube)
     cubeStates.insert(0,cube.copy())
-
-    #cube = scramble(cube)
-
     steps = 0
 
     printCube(cube)
@@ -1711,6 +1713,7 @@ def cube3d():
 
 
     vel = 4
+    lastMove = 0
     clock = pygame.time.Clock()
     x = 0
     viewAngle = 0
@@ -1771,7 +1774,9 @@ def cube3d():
         #x = 0
         #glRotatef(x, 1.0, 0.0, 1.0)
 #start of moves
-        print(curMove)
+        if curMove > lastMove:
+            print(curMove , moves[curMove])
+            lastMove = curMove
         if curMove < len(moves) and moves[curMove] == "yc":
             x = yc3D(x, p)
         elif curMove < len(moves) and moves[curMove] == "ycc":
@@ -1806,7 +1811,5 @@ def cube3d():
         
         if curMove < len(cubeStates) - 2:
             cube = cubeStates[curMove+2]
-            print(cubeStates[curMove])
-            print(cube)
 
 cube3d()
