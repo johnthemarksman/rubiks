@@ -272,7 +272,6 @@ def bc(cube):
     if(showSteps == True):
         print(steps,": bc")
         steps += 1
-        print(cube)
         cubeStates.append(cube.copy())
         moves.append("bc")
     return(cube)
@@ -294,9 +293,9 @@ def bcc(cube):
     return(cube)
 
 def blueFlower(cube):
-    debug = True
+    debug = False
     blues = 0
-    print("entering blue cross phase")
+    print("entering blue flower phase")
     while(not(cube[46]=='g' and cube[50]=='g' and cube[52]=='g' and cube[48]=='g')):
         ### Green Side
         
@@ -491,15 +490,15 @@ def blueFlower(cube):
             cube = bcc(cube)
             cube = wc(cube)
 
-        print(blues)
         blues += 1
         # if blues == 100:
         #     break
         #if(cube)
-    print("leaving blue cross phase")
+    print("leaving blue flower phase")
     return cube
 
 def greenCross(cube):
+    print("Entering green cross phase")
     while not(cube[19] == 'g' and cube[21] == 'g' and cube[23] == 'g' and cube[25] == 'g'):
         if((cube[43] == 'o' and cube[46] == 'g') or (cube[32] == 'y' and cube[50] == 'g') or (cube[1] == 'r' and cube[52] == 'g') or (cube[12] == 'w' and cube[48] == 'g')):
             if (cube[43] == 'o' and cube[46] == 'g') :
@@ -519,9 +518,11 @@ def greenCross(cube):
                 cube = wc(cube)
         else:
             cube = bc(cube)
+    print("Leaving green cross phase")
     return cube
 
 def greenCorners(cube):
+    print("Solving the green corners:")
     ### green red white corner
     print("green red white corner")
     grw = ('g', 'r', 'w')
@@ -676,14 +677,8 @@ def greenCorners(cube):
             cube = bcc(cube)
             cube = yc(cube)
             cube = bc(cube)
-
-
-
-
-
-
-
-
+        
+    print("Done with the green corners.")
     return(cube)
 
 
@@ -727,6 +722,7 @@ def prepEdge(cube, location):
     return cube
 
 def edges(cube):
+    print("solving the edges")
     allEdges = ( (10, 3) , (5, 28) , (34, 41) , (16, 39) , (1, 52) , (32, 50) , (43, 46) , (12, 48) )
     allColors = ( (cube[10], cube[3]) , (cube[5], cube[28]) , (cube[34], cube[41]) , (cube[16], cube[39]) , (cube[1], cube[52]) , (cube[32], cube[50]) , (cube[43], cube[46]) , (cube[12], cube[48]) )
     sideEdges = ( (10, 3) , (5, 28) , (34, 41) , (16, 39) )
@@ -911,15 +907,15 @@ def edges(cube):
         cube = bc(cube)
         cube = oc(cube)
 
-    
+    print("done solving the edges.")
         
     return cube
     
 def blueCross(cube):
+    print("Entering blue cross phase")
     crossColors = (cube[46],cube[48],cube[50],cube[52])
     if not(cube[46] == 'b' and cube[48] == 'b' and cube[50] == 'b' and cube[52] == 'b'):
         if not(cube[46] == 'b' or cube[48] == 'b' or cube[50] == 'b' or cube[52] == 'b'):
-            print(1)
             cube = oc(cube)
             cube = wc(cube)
             cube = bc(cube)
@@ -936,7 +932,6 @@ def blueCross(cube):
                 break
         printCube(cube)
         if(cube[50] == 'b'  and cube[52] == 'b'):
-            print(2)
             cube = oc(cube)
             cube = wc(cube)
             cube = bc(cube)
@@ -950,7 +945,6 @@ def blueCross(cube):
             cube = bcc(cube)
             cube = occ(cube)
         elif( cube[50] == 'b'  and cube[48] == 'b'  ):
-            print(3)
             cube = oc(cube)
             cube = wc(cube)
             cube = bc(cube)
@@ -959,13 +953,13 @@ def blueCross(cube):
             cube = occ(cube)
 
 
-
+    print("Leaving blue cross phase")
     return cube
 
 
 def blueCrossSides(cube):
+    print("Entering blue cross sides phase")
     if not(cube[1]== 'r' and cube[12] == 'w' and cube[43] == 'o' and cube[32] == 'y'):
-        print('test1')
         while(not(cube[1]== 'r' and cube[12] == 'w' and cube[43] == 'o' and cube[32] == 'y')):
             if cube[1] == 'r' and cube[12] == 'w':
                 cube = wc(cube)
@@ -1033,10 +1027,11 @@ def blueCrossSides(cube):
 
 
 
-
+    print("Leaving blue cross sides phase")
     return cube
 
 def blueCornersPrep(cube):
+    print("preparing the blue corners:")
     count = 0
     while(count != 4):
         corners = ((cube[0],cube[9],cube[51]) , (cube[29],cube[2],cube[53]) , (cube[44], cube[35], cube[47]) , (cube[15], cube[42], cube[45]))
@@ -1045,7 +1040,7 @@ def blueCornersPrep(cube):
         count = 0
         for i in range(4):
             if(corners[i][0] in correctCorners[i] and corners[i][1] in correctCorners[i] and corners[i][2] in correctCorners[i]):
-                print(corners[i])
+                #print(corners[i])
                 c = i
                 count += 1
 
@@ -1098,10 +1093,11 @@ def blueCornersPrep(cube):
 
             
 
-
+    print("Done preparing the blue corners.")
     return cube
 
 def blueCorners(cube):
+    print("solving the blue corners:")
     corners = ((cube[0],cube[9],cube[51]) , (cube[29],cube[2],cube[53]) , (cube[44], cube[35], cube[47]) , (cube[15], cube[42], cube[45]))
 
     for i in range(4):
@@ -1115,12 +1111,8 @@ def blueCorners(cube):
         cube = bc(cube)
         corners = ((cube[0],cube[9],cube[51]) , (cube[29],cube[2],cube[53]) , (cube[44], cube[35], cube[47]) , (cube[15], cube[42], cube[45]))
 
-
-
-
-
-
-
+    print("done solving blue corners")
+    print("The cube is now solved")
     return cube
 '''
 string awayclock(string cube)*/'''
@@ -1152,6 +1144,7 @@ def populateCube():
     return cube
 
 def scramble(cube):
+    print("scrabling cube:")
     for i in range(10):
         x = random.randint(1,6)
         if(x==0):
@@ -1177,6 +1170,7 @@ def scramble(cube):
         
         cubeStates.clear()
         moves.clear()
+    print("done scrabling cube.")
     return cube
 
 
@@ -1815,4 +1809,5 @@ def cube3d():
         if curMove < len(cubeStates) - 2:
             cube = cubeStates[curMove+2]
 
+print("Start of 3D cube:")
 cube3d()
