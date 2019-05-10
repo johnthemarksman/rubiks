@@ -1,7 +1,4 @@
-#include <iostream>
-#tesitghgfhsdfasdffdshgsdfh
 import random
-import arcade
 import pygame
 from pygame.locals import *
 from OpenGL.GL import *
@@ -9,7 +6,7 @@ from OpenGL.GLU import *
 import numpy
 
 
-speed = 1  #this is the speed for the 3d cube
+speed = 5  #this is the speed for the 3d cube
 randomize = True  #if this is true the cube will mix itself up randomly, set to false for user entered data
 
 
@@ -1137,6 +1134,12 @@ def populateCube():
         oSide = "ooooooooo"
         bSide = "bbbbbbbbb"
     else:
+        # rSide = "rrrrrrrrr"
+        # wSide = "wwwwwwwww"
+        # gSide = "ggggggggg"
+        # ySide = "yyyyyyyyy"
+        # oSide = "ooooooooo"
+        # bSide = "bbbbbbbbb"
         rSide = input("Enter the red side with the blue side on top:")
         wSide = input("Enter the white side with the red side on top:")
         gSide = input("Enter the green side with the red side on top:")
@@ -1212,9 +1215,6 @@ def main():
     printCube(cube)
     cube = blueCorners(cube)
     printCube(cube)
-
-    print(cubeStates)
-    print(moves)
 
  
 
@@ -1317,7 +1317,7 @@ class Cube:
 
     def draw(self):
         self.draw_sides()
-        glLineWidth(3)
+        glLineWidth(4)
         glBegin(GL_LINES)
         #glPushMatrix()
         #glRotatef(45, 0, 0, 0)
@@ -1712,12 +1712,15 @@ def cube3d():
     
 
 
-    vel = 4
+    vel = 5
     lastMove = 0
     clock = pygame.time.Clock()
     x = 0
     viewAngle = 0
     glTranslate(-2.5, -2.5, 7)
+    glTranslate(2.5, 2.5, 2.5)
+    glRotatef(-25, 0,1,0)
+    glTranslate(-2.5, -2.5, -2.5)
     updateColors()
 #start of while loop
     while True:
@@ -1730,17 +1733,17 @@ def cube3d():
 
         keys = pygame.key.get_pressed()
         # if keys[pygame.K_LEFT]:
-        #     glTranslatef(-vel, 0, 0)
+        #     glTranslatef(-vel/5, 0, 0)
         # if keys[pygame.K_RIGHT]:
-        #     glTranslatef(vel, 0, 0)
+        #     glTranslatef(vel/5, 0, 0)
         # if keys[pygame.K_UP]:
-        #     glTranslatef(0, vel, 0)
+        #     glTranslatef(0, vel/5, 0)
         # if keys[pygame.K_DOWN]:
-        #     glTranslatef(0, -vel, 0)
+        #     glTranslatef(0, -vel/5, 0)
         # if keys[pygame.K_t]:
-        #     glTranslatef(0, 0, vel)
+        #     glTranslatef(0, 0, vel/5)
         # if keys[pygame.K_g]:
-        #     glTranslatef(0, 0, -vel)
+        #     glTranslatef(0, 0, -vel/5)
         if keys[pygame.K_d]:
             glTranslate(2.5, 2.5, 2.5)
             glRotatef(vel, 0,1,0)
@@ -1774,7 +1777,7 @@ def cube3d():
         #x = 0
         #glRotatef(x, 1.0, 0.0, 1.0)
 #start of moves
-        if curMove > lastMove:
+        if curMove > lastMove and curMove < len(cubeStates) - 2:
             print(curMove , moves[curMove])
             lastMove = curMove
         if curMove < len(moves) and moves[curMove] == "yc":
